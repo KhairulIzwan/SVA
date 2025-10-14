@@ -1,0 +1,42 @@
+# Backend Dependencies
+openai-whisper>=20231117
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+transformers>=4.30.0
+sentence-transformers>=2.2.2
+opencv-python>=4.8.0
+ffmpeg-python>=0.2.0
+Pillow>=10.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Web Framework
+fastapi>=0.100.0
+uvicorn>=0.22.0
+grpcio>=1.56.0
+grpcio-tools>=1.56.0
+
+# Database & Storage
+# sqlite3  # Built into Python, no need to install
+sqlalchemy>=2.0.0
+alembic>=1.11.0
+
+# Document Generation
+reportlab>=4.0.0
+python-pptx>=0.6.21
+openpyxl>=3.1.0
+
+# Utilities
+python-multipart>=0.0.6
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+click>=8.1.0
+tqdm>=4.65.0
+rich>=13.0.0
+
+# Development
+pytest>=7.4.0
+black>=23.0.0
+isort>=5.12.0
+flake8>=6.0.0

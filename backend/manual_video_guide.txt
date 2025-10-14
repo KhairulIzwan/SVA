@@ -1,0 +1,46 @@
+
+# MANUAL VIDEO CREATION GUIDE
+
+## OPTION 1: Record with Phone (RECOMMENDED)
+1. Open your phone's camera app
+2. Switch to video mode
+3. Record yourself saying this script clearly:
+
+"Hello, this is a test video for the Smart Video Assistant. 
+I am demonstrating the speech recognition capabilities.
+The system uses Whisper AI to convert speech to text.
+This test will validate the transcription accuracy.
+Thank you for watching this demonstration."
+
+4. Keep recording for about 30-60 seconds
+5. Save the video
+6. Transfer to your computer
+7. Copy to: data/videos/my_speech_test.mp4
+
+## OPTION 2: Use Windows Voice Recorder + Screen Recording
+1. Open Windows Voice Recorder
+2. Record the script above
+3. Play the recording while using screen recording software
+4. Save as MP4
+
+## OPTION 3: Download from Free Sites
+1. Visit: https://pixabay.com/videos/
+2. Search for "speech" or "talking"
+3. Download a short video with clear speech
+4. Convert to MP4 if needed
+5. Save to data/videos/ folder
+
+## VERIFICATION STEPS
+After getting your video:
+1. Double-click the MP4 file
+2. Verify it plays in Windows Media Player or VLC
+3. Ensure you can hear clear speech
+4. File should be 30-120 seconds long
+5. Test with our Whisper script
+
+## FILE REQUIREMENTS
+✅ Format: MP4
+✅ Duration: 30-120 seconds  
+✅ Audio: Clear human speech
+✅ Size: Under 50MB
+✅ Playable in standard media players

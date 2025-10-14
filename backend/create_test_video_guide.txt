@@ -1,0 +1,15 @@
+
+# TEST VIDEO CREATION SCRIPT
+
+If you have access to text-to-speech software:
+
+1. Use Windows Narrator or online TTS service
+2. Convert this text to audio:
+
+"Welcome to the Smart Video Assistant test. This system analyzes videos using artificial intelligence. It can transcribe speech, identify objects, and answer questions about content. The AI uses computer vision for visual analysis and speech recognition for audio processing. This demonstration shows the capability to process both audio and visual information simultaneously."
+
+3. Create a simple video with this audio
+4. Save as MP4 in data/videos/ folder
+
+OR SIMPLER OPTION:
+Record yourself reading the sample script using your phone!
