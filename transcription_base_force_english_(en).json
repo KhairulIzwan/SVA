@@ -1,0 +1,459 @@
+{
+  "video": "test_video.mp4",
+  "model": "base",
+  "configuration": "Force English (en)",
+  "language": "en",
+  "text": " Welcome back to action goals for America. in a brutal rally of many people like us. and everyone's pride. and it is the Karnataka. Nasi, sayataka, karnasi, and it is the Karnataka. Nasi, sayataka, karnasi, and it is the Karnataka.",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.98,
+      "text": " Welcome back to action goals for America.",
+      "tokens": [
+        50379,
+        4027,
+        646,
+        281,
+        3069,
+        5493,
+        337,
+        3374,
+        13,
+        50904
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.741349743258569,
+      "compression_ratio": 1.141304347826087,
+      "no_speech_prob": 0.25629228353500366,
+      "words": [
+        {
+          "word": " Welcome",
+          "start": 0.0,
+          "end": 1.32,
+          "probability": 0.004423592705279589
+        },
+        {
+          "word": " back",
+          "start": 1.32,
+          "end": 1.64,
+          "probability": 0.07578902691602707
+        },
+        {
+          "word": " to",
+          "start": 1.64,
+          "end": 2.76,
+          "probability": 0.22914880514144897
+        },
+        {
+          "word": " action",
+          "start": 2.76,
+          "end": 5.04,
+          "probability": 8.417057688347995e-05
+        },
+        {
+          "word": " goals",
+          "start": 5.04,
+          "end": 5.52,
+          "probability": 6.668084097327664e-05
+        },
+        {
+          "word": " for",
+          "start": 5.52,
+          "end": 5.62,
+          "probability": 0.04108838737010956
+        },
+        {
+          "word": " America.",
+          "start": 5.62,
+          "end": 6.98,
+          "probability": 0.0013429255923256278
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 11.559999999999999,
+      "end": 17.42,
+      "text": " in a brutal rally of many people like us.",
+      "tokens": [
+        51069,
+        294,
+        257,
+        17878,
+        17584,
+        295,
+        867,
+        561,
+        411,
+        505,
+        13,
+        51235
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.741349743258569,
+      "compression_ratio": 1.141304347826087,
+      "no_speech_prob": 0.25629228353500366,
+      "words": [
+        {
+          "word": " in",
+          "start": 11.559999999999999,
+          "end": 12.959999999999999,
+          "probability": 0.00019688942120410502
+        },
+        {
+          "word": " a",
+          "start": 12.959999999999999,
+          "end": 14.36,
+          "probability": 0.03270350396633148
+        },
+        {
+          "word": " brutal",
+          "start": 14.36,
+          "end": 14.36,
+          "probability": 0.00032391681452281773
+        },
+        {
+          "word": " rally",
+          "start": 14.36,
+          "end": 15.54,
+          "probability": 0.00014859535440336913
+        },
+        {
+          "word": " of",
+          "start": 15.54,
+          "end": 16.98,
+          "probability": 0.04305626079440117
+        },
+        {
+          "word": " many",
+          "start": 16.98,
+          "end": 17.0,
+          "probability": 0.0006842566654086113
+        },
+        {
+          "word": " people",
+          "start": 17.0,
+          "end": 17.0,
+          "probability": 0.20514605939388275
+        },
+        {
+          "word": " like",
+          "start": 17.0,
+          "end": 17.12,
+          "probability": 0.0167526938021183
+        },
+        {
+          "word": " us.",
+          "start": 17.12,
+          "end": 17.42,
+          "probability": 0.22049519419670105
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 19.9,
+      "end": 23.34,
+      "text": " and everyone's pride.",
+      "tokens": [
+        51336,
+        293,
+        1518,
+        311,
+        10936,
+        13,
+        51556
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.741349743258569,
+      "compression_ratio": 1.141304347826087,
+      "no_speech_prob": 0.25629228353500366,
+      "words": [
+        {
+          "word": " and",
+          "start": 19.9,
+          "end": 20.1,
+          "probability": 0.05904413014650345
+        },
+        {
+          "word": " everyone's",
+          "start": 20.1,
+          "end": 21.36,
+          "probability": 0.009287718683481216
+        },
+        {
+          "word": " pride.",
+          "start": 21.36,
+          "end": 23.34,
+          "probability": 0.0062516010366380215
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 2334,
+      "start": 24.52,
+      "end": 27.2,
+      "text": " and it is the Karnataka.",
+      "tokens": [
+        50364,
+        293,
+        309,
+        307,
+        264,
+        591,
+        1083,
+        267,
+        7849,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7790911992390951,
+      "compression_ratio": 2.2962962962962963,
+      "no_speech_prob": 0.6597920656204224,
+      "words": [
+        {
+          "word": " and",
+          "start": 24.52,
+          "end": 25.5,
+          "probability": 0.019721223041415215
+        },
+        {
+          "word": " it",
+          "start": 25.5,
+          "end": 26.48,
+          "probability": 0.20632369816303253
+        },
+        {
+          "word": " is",
+          "start": 26.48,
+          "end": 26.56,
+          "probability": 0.2451794296503067
+        },
+        {
+          "word": " the",
+          "start": 26.56,
+          "end": 26.72,
+          "probability": 0.1252823919057846
+        },
+        {
+          "word": " Karnataka.",
+          "start": 26.72,
+          "end": 27.2,
+          "probability": 0.24145681504160166
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2334,
+      "start": 31.62,
+      "end": 34.42,
+      "text": " Nasi, sayataka, karnasi,",
+      "tokens": [
+        50564,
+        426,
+        8483,
+        11,
+        584,
+        267,
+        7849,
+        11,
+        350,
+        1083,
+        8483,
+        11,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7790911992390951,
+      "compression_ratio": 2.2962962962962963,
+      "no_speech_prob": 0.6597920656204224,
+      "words": [
+        {
+          "word": " Nasi,",
+          "start": 31.62,
+          "end": 32.6,
+          "probability": 0.49116646498441696
+        },
+        {
+          "word": " sayataka,",
+          "start": 32.6,
+          "end": 33.58,
+          "probability": 0.33685094118118286
+        },
+        {
+          "word": " karnasi,",
+          "start": 33.74,
+          "end": 34.42,
+          "probability": 0.49812165399392444
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2334,
+      "start": 35.6,
+      "end": 37.46,
+      "text": " and it is the Karnataka.",
+      "tokens": [
+        50764,
+        293,
+        309,
+        307,
+        264,
+        591,
+        1083,
+        267,
+        7849,
+        13,
+        50964
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7790911992390951,
+      "compression_ratio": 2.2962962962962963,
+      "no_speech_prob": 0.6597920656204224,
+      "words": [
+        {
+          "word": " and",
+          "start": 35.6,
+          "end": 35.76,
+          "probability": 0.034344229847192764
+        },
+        {
+          "word": " it",
+          "start": 35.76,
+          "end": 36.06,
+          "probability": 0.27284321188926697
+        },
+        {
+          "word": " is",
+          "start": 36.06,
+          "end": 36.58,
+          "probability": 0.7588468790054321
+        },
+        {
+          "word": " the",
+          "start": 36.58,
+          "end": 36.8,
+          "probability": 0.01110480260103941
+        },
+        {
+          "word": " Karnataka.",
+          "start": 36.8,
+          "end": 37.46,
+          "probability": 0.8600142598152161
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2334,
+      "start": 38.06,
+      "end": 40.44,
+      "text": " Nasi, sayataka, karnasi,",
+      "tokens": [
+        50964,
+        426,
+        8483,
+        11,
+        584,
+        267,
+        7849,
+        11,
+        350,
+        1083,
+        8483,
+        11,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7790911992390951,
+      "compression_ratio": 2.2962962962962963,
+      "no_speech_prob": 0.6597920656204224,
+      "words": [
+        {
+          "word": " Nasi,",
+          "start": 38.06,
+          "end": 38.06,
+          "probability": 0.5208681374788284
+        },
+        {
+          "word": " sayataka,",
+          "start": 38.56,
+          "end": 39.88,
+          "probability": 0.9542638858159384
+        },
+        {
+          "word": " karnasi,",
+          "start": 40.3,
+          "end": 40.44,
+          "probability": 0.8664622902870178
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2334,
+      "start": 41.16,
+      "end": 42.66,
+      "text": " and it is the Karnataka.",
+      "tokens": [
+        51164,
+        293,
+        309,
+        307,
+        264,
+        591,
+        1083,
+        267,
+        7849,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.7790911992390951,
+      "compression_ratio": 2.2962962962962963,
+      "no_speech_prob": 0.6597920656204224,
+      "words": [
+        {
+          "word": " and",
+          "start": 41.16,
+          "end": 41.32,
+          "probability": 0.8912253975868225
+        },
+        {
+          "word": " it",
+          "start": 41.32,
+          "end": 41.7,
+          "probability": 0.9686129093170166
+        },
+        {
+          "word": " is",
+          "start": 41.7,
+          "end": 41.92,
+          "probability": 0.9482606053352356
+        },
+        {
+          "word": " the",
+          "start": 41.92,
+          "end": 42.2,
+          "probability": 0.7769238352775574
+        },
+        {
+          "word": " Karnataka.",
+          "start": 42.2,
+          "end": 42.66,
+          "probability": 0.9367880076169968
+        }
+      ]
+    }
+  ],
+  "confidence_score": 0.9450000000000001
+}

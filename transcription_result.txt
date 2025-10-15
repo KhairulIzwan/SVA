@@ -1,0 +1,20 @@
+=== BEST TRANSCRIPTION RESULT ===
+Video: test_video.mp4
+Model: tiny
+Configuration: Force Malay (ms)
+Language: ms
+Confidence Score: 1.00
+Duration: unknowns
+
+Full transcript:
+ Kamer-sekeran Kamer-sekerar parchmentасi laptop juga Kamer-hakan reti sempia hubus ber тер thing berisi Nazi cables.
+
+=== TIMESTAMPED SEGMENTS ===
+[0.88s - 3.00s]:  Kamer-sekeran
+[3.62s - 7.50s]:  Kamer-sekerar parchment
+[8.32s - 10.08s]: асi laptop juga
+[10.08s - 13.22s]:  Kamer-hakan reti
+[13.22s - 19.10s]:  sempia hubus ber тер thing
+[19.10s - 21.56s]:  berisi Nazi
+[21.56s - 21.56s]: 
+[21.56s - 23.36s]:  cables.

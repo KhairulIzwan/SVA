@@ -1,0 +1,92 @@
+{
+  "video": "test_video.mp4",
+  "model": "small",
+  "configuration": "Force English (en)",
+  "language": "en",
+  "text": " Merit WoW!織ad infl ц melon",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 1.94,
+      "text": " Merit WoW!",
+      "tokens": [
+        50364,
+        6124,
+        270,
+        6622,
+        54,
+        0,
+        51470
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.4504286448160806,
+      "compression_ratio": 0.5555555555555556,
+      "no_speech_prob": 0.07559973001480103,
+      "words": [
+        {
+          "word": " Merit",
+          "start": 0.0,
+          "end": 1.62,
+          "probability": 0.20884053700137883
+        },
+        {
+          "word": " WoW!",
+          "start": 1.62,
+          "end": 1.94,
+          "probability": 0.028567494288836315
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 3194,
+      "start": 31.94,
+      "end": 33.86,
+      "text": "織ad infl ц melon",
+      "tokens": [
+        50364,
+        23141,
+        242,
+        345,
+        9922,
+        5188,
+        41722,
+        51563
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -6.658599429660374,
+      "compression_ratio": 0.7037037037037037,
+      "no_speech_prob": 0.527447521686554,
+      "words": [
+        {
+          "word": "織ad",
+          "start": 31.94,
+          "end": 33.2,
+          "probability": 0.2852497850017244
+        },
+        {
+          "word": " infl",
+          "start": 33.2,
+          "end": 33.84,
+          "probability": 1.587905330779904e-06
+        },
+        {
+          "word": " ц",
+          "start": 33.84,
+          "end": 33.86,
+          "probability": 2.8071187898603966e-06
+        },
+        {
+          "word": " melon",
+          "start": 33.86,
+          "end": 33.86,
+          "probability": 1.5752078979858197e-05
+        }
+      ]
+    }
+  ],
+  "confidence_score": 0.8500000000000001
+}

@@ -1,0 +1,351 @@
+{
+  "video": "test_video.mp4",
+  "model": "small",
+  "configuration": "Force Indonesian (id)",
+  "language": "id",
+  "text": " Kemerdekan, kemerdekan damak, kemerdekan asir, kemerdekan berarti cedak usus perut rakyat berisi nasi, vitamin dan zat bisi. Eh, itemdekan saya pada nasi. Saya cuka nakak nasi. Hari-hari saya nakak nasi. Saya nakak nasi. Hari-hari.",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 24.0,
+      "text": " Kemerdekan, kemerdekan damak, kemerdekan asir, kemerdekan berarti cedak usus perut rakyat berisi nasi, vitamin dan zat bisi.",
+      "tokens": [
+        50364,
+        30097,
+        7783,
+        916,
+        282,
+        11,
+        803,
+        936,
+        67,
+        916,
+        282,
+        2422,
+        514,
+        11,
+        803,
+        936,
+        67,
+        916,
+        282,
+        382,
+        347,
+        11,
+        803,
+        936,
+        67,
+        916,
+        282,
+        5948,
+        40155,
+        269,
+        292,
+        514,
+        505,
+        301,
+        680,
+        325,
+        367,
+        15681,
+        267,
+        5948,
+        8021,
+        5382,
+        72,
+        11,
+        17163,
+        3277,
+        35802,
+        7393,
+        72,
+        13,
+        51564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6044699470951872,
+      "compression_ratio": 1.4252873563218391,
+      "no_speech_prob": 0.07559973001480103,
+      "words": [
+        {
+          "word": " Kemerdekan,",
+          "start": 0.0,
+          "end": 1.94,
+          "probability": 0.581396546214819
+        },
+        {
+          "word": " kemerdekan",
+          "start": 2.34,
+          "end": 5.24,
+          "probability": 0.8615938544273376
+        },
+        {
+          "word": " damak,",
+          "start": 5.24,
+          "end": 6.54,
+          "probability": 0.29988984763622284
+        },
+        {
+          "word": " kemerdekan",
+          "start": 6.7,
+          "end": 7.7,
+          "probability": 0.7569794297218323
+        },
+        {
+          "word": " asir,",
+          "start": 7.7,
+          "end": 8.24,
+          "probability": 0.26238762587308884
+        },
+        {
+          "word": " kemerdekan",
+          "start": 8.42,
+          "end": 10.64,
+          "probability": 0.8599613308906555
+        },
+        {
+          "word": " berarti",
+          "start": 10.64,
+          "end": 11.6,
+          "probability": 0.42789657413959503
+        },
+        {
+          "word": " cedak",
+          "start": 11.6,
+          "end": 13.24,
+          "probability": 0.25289443135261536
+        },
+        {
+          "word": " usus",
+          "start": 13.24,
+          "end": 14.42,
+          "probability": 0.7914567589759827
+        },
+        {
+          "word": " perut",
+          "start": 14.42,
+          "end": 15.2,
+          "probability": 0.428514689207077
+        },
+        {
+          "word": " rakyat",
+          "start": 15.2,
+          "end": 16.2,
+          "probability": 0.7903444766998291
+        },
+        {
+          "word": " berisi",
+          "start": 16.2,
+          "end": 17.48,
+          "probability": 0.8322452008724213
+        },
+        {
+          "word": " nasi,",
+          "start": 17.48,
+          "end": 19.0,
+          "probability": 0.9550062417984009
+        },
+        {
+          "word": " vitamin",
+          "start": 19.62,
+          "end": 20.48,
+          "probability": 0.909575879573822
+        },
+        {
+          "word": " dan",
+          "start": 20.48,
+          "end": 21.98,
+          "probability": 0.6104973554611206
+        },
+        {
+          "word": " zat",
+          "start": 21.98,
+          "end": 22.74,
+          "probability": 0.7814837694168091
+        },
+        {
+          "word": " bisi.",
+          "start": 22.74,
+          "end": 24.0,
+          "probability": 0.42578186094760895
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 2400,
+      "start": 24.0,
+      "end": 42.1,
+      "text": " Eh, itemdekan saya pada nasi. Saya cuka nakak nasi. Hari-hari saya nakak nasi. Saya nakak nasi. Hari-hari.",
+      "tokens": [
+        50414,
+        9663,
+        11,
+        309,
+        443,
+        67,
+        916,
+        282,
+        9160,
+        26069,
+        5382,
+        72,
+        13,
+        16568,
+        269,
+        13599,
+        20332,
+        514,
+        5382,
+        72,
+        13,
+        47221,
+        12,
+        71,
+        3504,
+        9160,
+        20332,
+        514,
+        5382,
+        72,
+        13,
+        16568,
+        20332,
+        514,
+        5382,
+        72,
+        13,
+        47221,
+        12,
+        71,
+        3504,
+        13,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4811540950428356,
+      "compression_ratio": 1.5588235294117647,
+      "no_speech_prob": 0.6104587316513062,
+      "words": [
+        {
+          "word": " Eh,",
+          "start": 24.0,
+          "end": 25.46,
+          "probability": 0.05155288055539131
+        },
+        {
+          "word": " itemdekan",
+          "start": 26.3,
+          "end": 27.06,
+          "probability": 0.12980454619973897
+        },
+        {
+          "word": " saya",
+          "start": 27.06,
+          "end": 27.22,
+          "probability": 0.8959453105926514
+        },
+        {
+          "word": " pada",
+          "start": 27.22,
+          "end": 27.56,
+          "probability": 0.31457021832466125
+        },
+        {
+          "word": " nasi.",
+          "start": 27.56,
+          "end": 30.96,
+          "probability": 0.4400113970041275
+        },
+        {
+          "word": " Saya",
+          "start": 32.38,
+          "end": 32.88,
+          "probability": 0.9747480750083923
+        },
+        {
+          "word": " cuka",
+          "start": 32.88,
+          "end": 33.52,
+          "probability": 0.3650815337896347
+        },
+        {
+          "word": " nakak",
+          "start": 33.52,
+          "end": 34.04,
+          "probability": 0.27767277508974075
+        },
+        {
+          "word": " nasi.",
+          "start": 34.04,
+          "end": 35.46,
+          "probability": 0.9867282211780548
+        },
+        {
+          "word": " Hari",
+          "start": 35.56,
+          "end": 35.98,
+          "probability": 0.9620109796524048
+        },
+        {
+          "word": "-hari",
+          "start": 35.98,
+          "end": 36.46,
+          "probability": 0.7145825326442719
+        },
+        {
+          "word": " saya",
+          "start": 36.46,
+          "end": 36.94,
+          "probability": 0.976143479347229
+        },
+        {
+          "word": " nakak",
+          "start": 36.94,
+          "end": 37.6,
+          "probability": 0.9898762404918671
+        },
+        {
+          "word": " nasi.",
+          "start": 37.6,
+          "end": 38.3,
+          "probability": 0.9977522492408752
+        },
+        {
+          "word": " Saya",
+          "start": 38.92,
+          "end": 39.4,
+          "probability": 0.9752189517021179
+        },
+        {
+          "word": " nakak",
+          "start": 39.4,
+          "end": 40.04,
+          "probability": 0.9882778227329254
+        },
+        {
+          "word": " nasi.",
+          "start": 40.04,
+          "end": 40.96,
+          "probability": 0.997166782617569
+        },
+        {
+          "word": " Hari",
+          "start": 41.18,
+          "end": 41.62,
+          "probability": 0.9965900182723999
+        },
+        {
+          "word": "-hari.",
+          "start": 41.62,
+          "end": 42.1,
+          "probability": 0.9841157595316569
+        }
+      ]
+    }
+  ],
+  "confidence_score": 1.0
+}

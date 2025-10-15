@@ -1,0 +1,522 @@
+{
+  "video": "test_video.mp4",
+  "model": "base",
+  "configuration": "Auto-detect language",
+  "language": "da",
+  "text": " Kømernekalen! Kømernekalen! Damen! Kømernekalen! Hvis man er sikker, kan man sikker. Kømernekalen er ryrti. Det er der, ufus i røn, ræjæl. Berisi, nasi. Vi er derin, der er sikker. Hæm! I denne kalser er der! Da, nasi. Zæjæl, kan man sikker. Hæm! Hæm! Hæm! Hæm! Ja! Da og kan rasie h一起!",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 3.2800000000000047,
+      "end": 27.56,
+      "text": " Kømernekalen! Kømernekalen! Damen! Kømernekalen! Hvis man er sikker, kan man sikker. Kømernekalen er ryrti. Det er der, ufus i røn, ræjæl. Berisi, nasi. Vi er derin, der er sikker. Hæm! I denne kalser er der!",
+      "tokens": [
+        50364,
+        591,
+        6715,
+        936,
+        716,
+        74,
+        21745,
+        0,
+        591,
+        6715,
+        936,
+        716,
+        74,
+        21745,
+        0,
+        5885,
+        268,
+        0,
+        591,
+        6715,
+        936,
+        716,
+        74,
+        21745,
+        0,
+        389,
+        4938,
+        587,
+        1189,
+        262,
+        1035,
+        5767,
+        11,
+        4608,
+        587,
+        262,
+        1035,
+        5767,
+        13,
+        591,
+        6715,
+        936,
+        716,
+        74,
+        21745,
+        1189,
+        367,
+        6016,
+        7317,
+        13,
+        4237,
+        1189,
+        1163,
+        11,
+        344,
+        69,
+        301,
+        741,
+        367,
+        6715,
+        77,
+        11,
+        367,
+        7303,
+        73,
+        7303,
+        75,
+        13,
+        5637,
+        8021,
+        11,
+        5382,
+        72,
+        13,
+        6626,
+        1189,
+        1163,
+        259,
+        11,
+        1163,
+        1189,
+        262,
+        1035,
+        5767,
+        13,
+        389,
+        7303,
+        76,
+        0,
+        286,
+        1441,
+        716,
+        350,
+        1124,
+        260,
+        1189,
+        1163,
+        0
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.944857818911774,
+      "compression_ratio": 1.588235294117647,
+      "no_speech_prob": 0.25629228353500366,
+      "words": [
+        {
+          "word": " Kømernekalen!",
+          "start": 3.2800000000000047,
+          "end": 4.180000000000002,
+          "probability": 0.2336422527829806
+        },
+        {
+          "word": " Kømernekalen!",
+          "start": 4.180000000000002,
+          "end": 5.08,
+          "probability": 0.934229443470637
+        },
+        {
+          "word": " Damen!",
+          "start": 5.54,
+          "end": 5.86,
+          "probability": 0.29288357496261597
+        },
+        {
+          "word": " Kømernekalen!",
+          "start": 6.66,
+          "end": 7.56,
+          "probability": 0.8495653420686722
+        },
+        {
+          "word": " Hvis",
+          "start": 7.78,
+          "end": 7.98,
+          "probability": 0.13888954371213913
+        },
+        {
+          "word": " man",
+          "start": 7.98,
+          "end": 7.98,
+          "probability": 0.13400159776210785
+        },
+        {
+          "word": " er",
+          "start": 7.98,
+          "end": 8.0,
+          "probability": 0.1247166246175766
+        },
+        {
+          "word": " sikker,",
+          "start": 8.0,
+          "end": 8.4,
+          "probability": 0.26627503832181293
+        },
+        {
+          "word": " kan",
+          "start": 8.56,
+          "end": 8.66,
+          "probability": 0.11483457684516907
+        },
+        {
+          "word": " man",
+          "start": 8.66,
+          "end": 8.74,
+          "probability": 0.11756709218025208
+        },
+        {
+          "word": " sikker.",
+          "start": 8.74,
+          "end": 8.84,
+          "probability": 0.6452054033676783
+        },
+        {
+          "word": " Kømernekalen",
+          "start": 9.66,
+          "end": 10.56,
+          "probability": 0.9670057694117228
+        },
+        {
+          "word": " er",
+          "start": 10.56,
+          "end": 11.08,
+          "probability": 0.20991964638233185
+        },
+        {
+          "word": " ryrti.",
+          "start": 11.08,
+          "end": 11.58,
+          "probability": 0.38895811637242633
+        },
+        {
+          "word": " Det",
+          "start": 12.38,
+          "end": 12.66,
+          "probability": 0.23100611567497253
+        },
+        {
+          "word": " er",
+          "start": 12.66,
+          "end": 12.82,
+          "probability": 0.29801684617996216
+        },
+        {
+          "word": " der,",
+          "start": 12.82,
+          "end": 13.02,
+          "probability": 0.10948116332292557
+        },
+        {
+          "word": " ufus",
+          "start": 13.34,
+          "end": 14.24,
+          "probability": 0.40773462255795795
+        },
+        {
+          "word": " i",
+          "start": 14.24,
+          "end": 14.56,
+          "probability": 0.16913928091526031
+        },
+        {
+          "word": " røn,",
+          "start": 14.56,
+          "end": 15.24,
+          "probability": 0.3494439721107483
+        },
+        {
+          "word": " ræjæl.",
+          "start": 15.38,
+          "end": 16.1,
+          "probability": 0.2287254549562931
+        },
+        {
+          "word": " Berisi,",
+          "start": 16.74,
+          "end": 17.34,
+          "probability": 0.5367600321769714
+        },
+        {
+          "word": " nasi.",
+          "start": 18.04,
+          "end": 18.8,
+          "probability": 0.7377910017967224
+        },
+        {
+          "word": " Vi",
+          "start": 19.62,
+          "end": 20.06,
+          "probability": 0.32260945439338684
+        },
+        {
+          "word": " er",
+          "start": 20.06,
+          "end": 20.2,
+          "probability": 0.14296305179595947
+        },
+        {
+          "word": " derin,",
+          "start": 20.2,
+          "end": 20.72,
+          "probability": 0.19601530581712723
+        },
+        {
+          "word": " der",
+          "start": 21.56,
+          "end": 21.9,
+          "probability": 0.6526837944984436
+        },
+        {
+          "word": " er",
+          "start": 21.9,
+          "end": 22.56,
+          "probability": 0.12549908459186554
+        },
+        {
+          "word": " sikker.",
+          "start": 22.56,
+          "end": 23.72,
+          "probability": 0.39145562052726746
+        },
+        {
+          "word": " Hæm!",
+          "start": 24.94,
+          "end": 25.6,
+          "probability": 0.5453559954961141
+        },
+        {
+          "word": " I",
+          "start": 26.18,
+          "end": 26.44,
+          "probability": 0.5102816224098206
+        },
+        {
+          "word": " denne",
+          "start": 26.44,
+          "end": 26.76,
+          "probability": 0.2151627466082573
+        },
+        {
+          "word": " kalser",
+          "start": 26.76,
+          "end": 27.16,
+          "probability": 0.4521489044030507
+        },
+        {
+          "word": " er",
+          "start": 27.16,
+          "end": 27.36,
+          "probability": 0.15274874866008759
+        },
+        {
+          "word": " der!",
+          "start": 27.36,
+          "end": 27.56,
+          "probability": 0.5627507567405701
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 2756,
+      "start": 27.56,
+      "end": 36.42,
+      "text": " Da, nasi. Zæjæl, kan man sikker. Hæm! Hæm!",
+      "tokens": [
+        50364,
+        3933,
+        11,
+        5382,
+        72,
+        13,
+        1176,
+        7303,
+        73,
+        7303,
+        75,
+        11,
+        4608,
+        587,
+        262,
+        1035,
+        5767,
+        13,
+        389,
+        7303,
+        76,
+        0,
+        389,
+        7303,
+        76,
+        0
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.8518518518518519,
+      "compression_ratio": 0.9387755102040817,
+      "no_speech_prob": 0.19796687364578247,
+      "words": [
+        {
+          "word": " Da,",
+          "start": 27.56,
+          "end": 27.7,
+          "probability": 0.02224167436361313
+        },
+        {
+          "word": " nasi.",
+          "start": 28.06,
+          "end": 30.88,
+          "probability": 0.47315013222396374
+        },
+        {
+          "word": " Zæjæl,",
+          "start": 32.56,
+          "end": 33.2,
+          "probability": 0.12678426671773196
+        },
+        {
+          "word": " kan",
+          "start": 33.24,
+          "end": 33.56,
+          "probability": 0.011316902935504913
+        },
+        {
+          "word": " man",
+          "start": 33.56,
+          "end": 33.84,
+          "probability": 0.0925881415605545
+        },
+        {
+          "word": " sikker.",
+          "start": 33.84,
+          "end": 35.58,
+          "probability": 0.01913194918112519
+        },
+        {
+          "word": " Hæm!",
+          "start": 35.58,
+          "end": 35.88,
+          "probability": 0.10432596333945791
+        },
+        {
+          "word": " Hæm!",
+          "start": 36.04,
+          "end": 36.42,
+          "probability": 0.6748969852924347
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 3642,
+      "start": 38.0,
+      "end": 39.42,
+      "text": " Hæm! Hæm!",
+      "tokens": [
+        50364,
+        389,
+        7303,
+        76,
+        0,
+        389,
+        7303,
+        76,
+        0
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.6787351131439209,
+      "compression_ratio": 0.6470588235294118,
+      "no_speech_prob": 0.0830722227692604,
+      "words": [
+        {
+          "word": " Hæm!",
+          "start": 38.0,
+          "end": 39.4,
+          "probability": 0.014221959747374058
+        },
+        {
+          "word": " Hæm!",
+          "start": 39.4,
+          "end": 39.42,
+          "probability": 0.507005383570989
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 3942,
+      "start": 39.42,
+      "end": 41.62,
+      "text": " Ja! Da og kan rasie h一起!",
+      "tokens": [
+        50368,
+        3530,
+        0,
+        3933,
+        5360,
+        4608,
+        26815,
+        414,
+        276,
+        29567,
+        0,
+        50502
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5087867149939904,
+      "compression_ratio": 0.7777777777777778,
+      "no_speech_prob": 0.1518903225660324,
+      "words": [
+        {
+          "word": " Ja!",
+          "start": 39.42,
+          "end": 39.5,
+          "probability": 0.06951923668384552
+        },
+        {
+          "word": " Da",
+          "start": 39.66,
+          "end": 39.74,
+          "probability": 0.0047018863260746
+        },
+        {
+          "word": " og",
+          "start": 39.74,
+          "end": 39.84,
+          "probability": 0.001127338851802051
+        },
+        {
+          "word": " kan",
+          "start": 39.84,
+          "end": 39.96,
+          "probability": 0.06943332403898239
+        },
+        {
+          "word": " rasie",
+          "start": 39.96,
+          "end": 40.56,
+          "probability": 0.1461690850846935
+        },
+        {
+          "word": " h一起!",
+          "start": 40.56,
+          "end": 41.62,
+          "probability": 0.002232502823972027
+        }
+      ]
+    }
+  ],
+  "confidence_score": 0.488235294117647
+}

@@ -1,0 +1,275 @@
+{
+  "video": "test_video.mp4",
+  "model": "base",
+  "configuration": "Force Indonesian (id)",
+  "language": "id",
+  "text": " Kemudekan, Kemudekan, Damak, Kemudekan, Asim, Kemudekan, Rerti, Tempia, Usus, Peron, Raya, Berisi, Nasi, Ili, duduk di ofil Yang Nasi, I lapp Art Kenneth Radha.",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 18.6,
+      "text": " Kemudekan, Kemudekan, Damak, Kemudekan, Asim, Kemudekan, Rerti, Tempia, Usus, Peron, Raya, Berisi, Nasi,",
+      "tokens": [
+        50364,
+        30097,
+        532,
+        916,
+        282,
+        11,
+        30097,
+        532,
+        916,
+        282,
+        11,
+        5885,
+        514,
+        11,
+        30097,
+        532,
+        916,
+        282,
+        11,
+        1018,
+        332,
+        11,
+        30097,
+        532,
+        916,
+        282,
+        11,
+        497,
+        911,
+        72,
+        11,
+        8095,
+        79,
+        654,
+        11,
+        4958,
+        301,
+        11,
+        3026,
+        266,
+        11,
+        497,
+        4427,
+        11,
+        5637,
+        8021,
+        11,
+        426,
+        8483,
+        11,
+        51340
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8386096594468603,
+      "compression_ratio": 1.368421052631579,
+      "no_speech_prob": 0.25629228353500366,
+      "words": [
+        {
+          "word": " Kemudekan,",
+          "start": 0.0,
+          "end": 1.92,
+          "probability": 0.3805317413061857
+        },
+        {
+          "word": " Kemudekan,",
+          "start": 2.4,
+          "end": 5.14,
+          "probability": 0.811199888586998
+        },
+        {
+          "word": " Damak,",
+          "start": 5.46,
+          "end": 5.86,
+          "probability": 0.1680281013250351
+        },
+        {
+          "word": " Kemudekan,",
+          "start": 6.48,
+          "end": 7.5,
+          "probability": 0.7818330675363541
+        },
+        {
+          "word": " Asim,",
+          "start": 8.14,
+          "end": 8.28,
+          "probability": 0.18794188648462296
+        },
+        {
+          "word": " Kemudekan,",
+          "start": 8.42,
+          "end": 9.18,
+          "probability": 0.7571687428280711
+        },
+        {
+          "word": " Rerti,",
+          "start": 9.82,
+          "end": 11.78,
+          "probability": 0.40430327753225964
+        },
+        {
+          "word": " Tempia,",
+          "start": 12.4,
+          "end": 13.02,
+          "probability": 0.3675256818532944
+        },
+        {
+          "word": " Usus,",
+          "start": 13.86,
+          "end": 14.22,
+          "probability": 0.4607635736465454
+        },
+        {
+          "word": " Peron,",
+          "start": 14.68,
+          "end": 15.1,
+          "probability": 0.22715280950069427
+        },
+        {
+          "word": " Raya,",
+          "start": 15.52,
+          "end": 15.76,
+          "probability": 0.3318125307559967
+        },
+        {
+          "word": " Berisi,",
+          "start": 16.66,
+          "end": 17.34,
+          "probability": 0.9035449326038361
+        },
+        {
+          "word": " Nasi,",
+          "start": 18.18,
+          "end": 18.6,
+          "probability": 0.5726421922445297
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 1860,
+      "start": 18.6,
+      "end": 24.68,
+      "text": " Ili, duduk di ofil Yang Nasi,",
+      "tokens": [
+        50370,
+        286,
+        2081,
+        11,
+        38512,
+        2034,
+        1026,
+        295,
+        388,
+        11978,
+        426,
+        8483,
+        11,
+        50668
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.549160297100361,
+      "compression_ratio": 0.8870967741935484,
+      "no_speech_prob": 0.23642843961715698,
+      "words": [
+        {
+          "word": " Ili,",
+          "start": 18.6,
+          "end": 18.86,
+          "probability": 0.05027153389528394
+        },
+        {
+          "word": " duduk",
+          "start": 19.62,
+          "end": 20.44,
+          "probability": 0.35274479754662025
+        },
+        {
+          "word": " di",
+          "start": 20.44,
+          "end": 20.7,
+          "probability": 0.5281873941421509
+        },
+        {
+          "word": " ofil",
+          "start": 20.7,
+          "end": 21.64,
+          "probability": 0.02320382776633778
+        },
+        {
+          "word": " Yang",
+          "start": 21.64,
+          "end": 21.86,
+          "probability": 0.0002615330449771136
+        },
+        {
+          "word": " Nasi,",
+          "start": 21.86,
+          "end": 24.68,
+          "probability": 0.35822610824834555
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 1860,
+      "start": 31.340000000000003,
+      "end": 43.58,
+      "text": " I lapp Art Kenneth Radha.",
+      "tokens": [
+        50668,
+        286,
+        635,
+        427,
+        5735,
+        33735,
+        9654,
+        1641,
+        13,
+        50906
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.549160297100361,
+      "compression_ratio": 0.8870967741935484,
+      "no_speech_prob": 0.23642843961715698,
+      "words": [
+        {
+          "word": " I",
+          "start": 31.340000000000003,
+          "end": 32.74,
+          "probability": 0.000655994052067399
+        },
+        {
+          "word": " lapp",
+          "start": 32.74,
+          "end": 33.28,
+          "probability": 0.0007311489007406635
+        },
+        {
+          "word": " Art",
+          "start": 33.28,
+          "end": 34.06,
+          "probability": 3.268070940976031e-05
+        },
+        {
+          "word": " Kenneth",
+          "start": 34.06,
+          "end": 34.06,
+          "probability": 1.7901998035085853e-06
+        },
+        {
+          "word": " Radha.",
+          "start": 34.06,
+          "end": 43.58,
+          "probability": 0.12703319364300114
+        }
+      ]
+    }
+  ],
+  "confidence_score": 1.0
+}

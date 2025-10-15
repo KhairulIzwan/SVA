@@ -1,0 +1,536 @@
+{
+  "video": "test_video.mp4",
+  "model": "tiny",
+  "configuration": "Force English (en)",
+  "language": "en",
+  "text": " We continue to live in… A wise saying from政治 to Albania in Central Asia. We miss it. religion, religion, our religion. Katharine. Sant Patya. Nasi! Zaya! Kana! Kana! Zaya! Kana! Kana!",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.74,
+      "text": " We continue to live in…",
+      "tokens": [
+        50364,
+        492,
+        2354,
+        281,
+        1621,
+        294,
+        1260,
+        50457
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " We",
+          "start": 0.0,
+          "end": 1.42,
+          "probability": 0.0032529968302696943
+        },
+        {
+          "word": " continue",
+          "start": 1.42,
+          "end": 1.62,
+          "probability": 0.004978972487151623
+        },
+        {
+          "word": " to",
+          "start": 1.62,
+          "end": 5.98,
+          "probability": 0.41877323389053345
+        },
+        {
+          "word": " live",
+          "start": 5.98,
+          "end": 5.98,
+          "probability": 0.04255620390176773
+        },
+        {
+          "word": " in…",
+          "start": 5.98,
+          "end": 6.74,
+          "probability": 0.052586040772439446
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.74,
+      "end": 9.1,
+      "text": " A wise saying from政治 to Albania in Central Asia.",
+      "tokens": [
+        50519,
+        316,
+        10829,
+        1566,
+        490,
+        47456,
+        281,
+        41547,
+        654,
+        294,
+        9701,
+        10038,
+        13,
+        50770
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " A",
+          "start": 6.74,
+          "end": 7.54,
+          "probability": 0.0034498681779950857
+        },
+        {
+          "word": " wise",
+          "start": 7.54,
+          "end": 8.48,
+          "probability": 0.00031419048900716007
+        },
+        {
+          "word": " saying",
+          "start": 8.48,
+          "end": 8.74,
+          "probability": 0.00026910132146440446
+        },
+        {
+          "word": " from政治",
+          "start": 8.74,
+          "end": 9.1,
+          "probability": 0.00048786785077936656
+        },
+        {
+          "word": " to",
+          "start": 9.1,
+          "end": 9.1,
+          "probability": 0.08935640752315521
+        },
+        {
+          "word": " Albania",
+          "start": 9.1,
+          "end": 9.1,
+          "probability": 0.2721944209042704
+        },
+        {
+          "word": " in",
+          "start": 9.1,
+          "end": 9.1,
+          "probability": 0.018759941682219505
+        },
+        {
+          "word": " Central",
+          "start": 9.1,
+          "end": 9.1,
+          "probability": 0.0019812630489468575
+        },
+        {
+          "word": " Asia.",
+          "start": 9.1,
+          "end": 9.1,
+          "probability": 0.07868082821369171
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.8,
+      "end": 15.84,
+      "text": " We miss it.",
+      "tokens": [
+        50770,
+        492,
+        1713,
+        309,
+        13,
+        50870
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " We",
+          "start": 9.8,
+          "end": 10.02,
+          "probability": 0.2096051126718521
+        },
+        {
+          "word": " miss",
+          "start": 10.02,
+          "end": 10.34,
+          "probability": 5.272852285997942e-05
+        },
+        {
+          "word": " it.",
+          "start": 10.34,
+          "end": 15.84,
+          "probability": 0.017825400456786156
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.84,
+      "end": 15.84,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": []
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 16.86,
+      "end": 17.32,
+      "text": " religion,",
+      "tokens": [
+        51057,
+        7561,
+        11,
+        51109
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " religion,",
+          "start": 16.86,
+          "end": 17.32,
+          "probability": 3.113010461675003e-05
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 18.2,
+      "end": 18.72,
+      "text": " religion,",
+      "tokens": [
+        51109,
+        7561,
+        11,
+        51215
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " religion,",
+          "start": 18.2,
+          "end": 18.72,
+          "probability": 0.13510297238826752
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 18.72,
+      "end": 18.72,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": []
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 18.72,
+      "end": 19.92,
+      "text": " our religion.",
+      "tokens": [
+        51271,
+        527,
+        7561,
+        13,
+        51393
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " our",
+          "start": 18.72,
+          "end": 18.72,
+          "probability": 0.00344267999753356
+        },
+        {
+          "word": " religion.",
+          "start": 18.72,
+          "end": 19.92,
+          "probability": 0.08871126919984818
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 21.78,
+      "end": 22.04,
+      "text": " Katharine.",
+      "tokens": [
+        51421,
+        20067,
+        289,
+        533,
+        13,
+        51547
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " Katharine.",
+          "start": 21.78,
+          "end": 22.04,
+          "probability": 0.2591450502574541
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 25.94,
+      "end": 26.66,
+      "text": " Sant Patya.",
+      "tokens": [
+        51661,
+        17315,
+        4379,
+        3016,
+        13,
+        51761
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.156982421875,
+      "compression_ratio": 1.221476510067114,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " Sant",
+          "start": 25.94,
+          "end": 26.66,
+          "probability": 0.00010387910151621327
+        },
+        {
+          "word": " Patya.",
+          "start": 26.66,
+          "end": 26.66,
+          "probability": 0.019313819240778685
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 30.88,
+      "text": " Nasi!",
+      "tokens": [
+        50364,
+        426,
+        8483,
+        0,
+        50414
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Nasi!",
+          "start": 30.0,
+          "end": 30.88,
+          "probability": 0.23177406191825867
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 3000,
+      "start": 32.62,
+      "end": 33.0,
+      "text": " Zaya!",
+      "tokens": [
+        50464,
+        1176,
+        4427,
+        0,
+        50514
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Zaya!",
+          "start": 32.62,
+          "end": 33.0,
+          "probability": 0.2005499303340912
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 3000,
+      "start": 33.46,
+      "end": 33.94,
+      "text": " Kana!",
+      "tokens": [
+        50514,
+        591,
+        2095,
+        0,
+        50614
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Kana!",
+          "start": 33.46,
+          "end": 33.94,
+          "probability": 0.19118399918079376
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 3000,
+      "start": 33.94,
+      "end": 34.32,
+      "text": " Kana!",
+      "tokens": [
+        50614,
+        591,
+        2095,
+        0,
+        50764
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Kana!",
+          "start": 33.94,
+          "end": 34.32,
+          "probability": 0.731090247631073
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 3000,
+      "start": 38.66,
+      "end": 39.0,
+      "text": " Zaya!",
+      "tokens": [
+        50764,
+        1176,
+        4427,
+        0,
+        50814
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Zaya!",
+          "start": 38.66,
+          "end": 39.13999999999999,
+          "probability": 0.5271183885633945
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 3000,
+      "start": 39.74,
+      "end": 40.12,
+      "text": " Kana!",
+      "tokens": [
+        50814,
+        591,
+        2095,
+        0,
+        50864
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Kana!",
+          "start": 39.74,
+          "end": 40.12,
+          "probability": 0.885632187128067
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 3000,
+      "start": 41.1,
+      "end": 41.44,
+      "text": " Kana!",
+      "tokens": [
+        50864,
+        591,
+        2095,
+        0,
+        51064
+      ],
+      "temperature": 0.2,
+      "avg_logprob": -0.8092153867085775,
+      "compression_ratio": 1.5769230769230769,
+      "no_speech_prob": 0.2861981689929962,
+      "words": [
+        {
+          "word": " Kana!",
+          "start": 41.1,
+          "end": 41.44,
+          "probability": 0.5583038404583931
+        }
+      ]
+    }
+  ],
+  "confidence_score": 0.982258064516129
+}

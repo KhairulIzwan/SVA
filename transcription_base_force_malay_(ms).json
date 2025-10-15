@@ -1,0 +1,316 @@
+{
+  "video": "test_video.mp4",
+  "model": "base",
+  "configuration": "Force Malay (ms)",
+  "language": "ms",
+  "text": " Kemen dekan, kemen dekan, damat, kemen dekan, nasi plak dekan, kemen dekan, rirti, tepiat, usius, beruk, raiat, berisi, nasi, kita min, dan zahsi, item dekan, sepanjang, nasi, sayat, kena kena, nasi,",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 18.94,
+      "text": " Kemen dekan, kemen dekan, damat, kemen dekan, nasi plak dekan, kemen dekan, rirti, tepiat, usius, beruk, raiat, berisi, nasi,",
+      "tokens": [
+        50364,
+        591,
+        14071,
+        368,
+        5225,
+        11,
+        350,
+        14071,
+        368,
+        5225,
+        11,
+        2422,
+        267,
+        11,
+        350,
+        14071,
+        368,
+        5225,
+        11,
+        5382,
+        72,
+        499,
+        514,
+        368,
+        5225,
+        11,
+        350,
+        14071,
+        368,
+        5225,
+        11,
+        367,
+        2498,
+        72,
+        11,
+        256,
+        595,
+        7676,
+        11,
+        505,
+        4872,
+        11,
+        5948,
+        2034,
+        11,
+        367,
+        1301,
+        267,
+        11,
+        5948,
+        8021,
+        11,
+        5382,
+        72,
+        11,
+        51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.770608244271114,
+      "compression_ratio": 1.6025641025641026,
+      "no_speech_prob": 0.25629228353500366,
+      "words": [
+        {
+          "word": " Kemen",
+          "start": 0.0,
+          "end": 1.34,
+          "probability": 0.24385572969913483
+        },
+        {
+          "word": " dekan,",
+          "start": 1.34,
+          "end": 1.76,
+          "probability": 0.3769940994679928
+        },
+        {
+          "word": " kemen",
+          "start": 2.52,
+          "end": 4.4,
+          "probability": 0.6622260808944702
+        },
+        {
+          "word": " dekan,",
+          "start": 4.4,
+          "end": 4.92,
+          "probability": 0.9872026741504669
+        },
+        {
+          "word": " damat,",
+          "start": 5.48,
+          "end": 5.98,
+          "probability": 0.46829454600811005
+        },
+        {
+          "word": " kemen",
+          "start": 7.06,
+          "end": 7.26,
+          "probability": 0.7391993999481201
+        },
+        {
+          "word": " dekan,",
+          "start": 7.26,
+          "end": 7.56,
+          "probability": 0.8624068796634674
+        },
+        {
+          "word": " nasi",
+          "start": 7.9,
+          "end": 8.22,
+          "probability": 0.33430835977196693
+        },
+        {
+          "word": " plak",
+          "start": 8.22,
+          "end": 8.56,
+          "probability": 0.25259826704859734
+        },
+        {
+          "word": " dekan,",
+          "start": 8.56,
+          "end": 8.88,
+          "probability": 0.8488049209117889
+        },
+        {
+          "word": " kemen",
+          "start": 9.36,
+          "end": 9.96,
+          "probability": 0.9568426012992859
+        },
+        {
+          "word": " dekan,",
+          "start": 9.96,
+          "end": 10.48,
+          "probability": 0.9951023459434509
+        },
+        {
+          "word": " rirti,",
+          "start": 11.0,
+          "end": 11.66,
+          "probability": 0.5474386413892111
+        },
+        {
+          "word": " tepiat,",
+          "start": 12.62,
+          "end": 13.1,
+          "probability": 0.21377568443616232
+        },
+        {
+          "word": " usius,",
+          "start": 13.82,
+          "end": 14.32,
+          "probability": 0.5549794435501099
+        },
+        {
+          "word": " beruk,",
+          "start": 14.68,
+          "end": 15.1,
+          "probability": 0.29147880524396896
+        },
+        {
+          "word": " raiat,",
+          "start": 15.54,
+          "end": 16.2,
+          "probability": 0.34647571047147113
+        },
+        {
+          "word": " berisi,",
+          "start": 16.88,
+          "end": 17.38,
+          "probability": 0.9120041728019714
+        },
+        {
+          "word": " nasi,",
+          "start": 18.14,
+          "end": 18.94,
+          "probability": 0.9918585419654846
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 1894,
+      "start": 18.94,
+      "end": 34.66,
+      "text": " kita min, dan zahsi, item dekan, sepanjang, nasi, sayat, kena kena, nasi,",
+      "tokens": [
+        50364,
+        8965,
+        923,
+        11,
+        3277,
+        710,
+        545,
+        7691,
+        11,
+        309,
+        443,
+        368,
+        5225,
+        11,
+        369,
+        6040,
+        26925,
+        11,
+        5382,
+        72,
+        11,
+        584,
+        267,
+        11,
+        350,
+        4118,
+        350,
+        4118,
+        11,
+        5382,
+        72,
+        11,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8857590811593192,
+      "compression_ratio": 1.0895522388059702,
+      "no_speech_prob": 0.35932859778404236,
+      "words": [
+        {
+          "word": " kita",
+          "start": 18.94,
+          "end": 20.06,
+          "probability": 0.03053487464785576
+        },
+        {
+          "word": " min,",
+          "start": 20.06,
+          "end": 20.62,
+          "probability": 0.08587555587291718
+        },
+        {
+          "word": " dan",
+          "start": 21.58,
+          "end": 21.92,
+          "probability": 0.22751745581626892
+        },
+        {
+          "word": " zahsi,",
+          "start": 21.92,
+          "end": 23.36,
+          "probability": 0.2598268687725067
+        },
+        {
+          "word": " item",
+          "start": 23.92,
+          "end": 26.62,
+          "probability": 0.06150416191667318
+        },
+        {
+          "word": " dekan,",
+          "start": 26.62,
+          "end": 26.94,
+          "probability": 0.13516905531287193
+        },
+        {
+          "word": " sepanjang,",
+          "start": 27.12,
+          "end": 27.76,
+          "probability": 0.4762515127658844
+        },
+        {
+          "word": " nasi,",
+          "start": 29.94,
+          "end": 31.0,
+          "probability": 0.5999020785093307
+        },
+        {
+          "word": " sayat,",
+          "start": 32.54,
+          "end": 33.2,
+          "probability": 0.2592946570366621
+        },
+        {
+          "word": " kena",
+          "start": 33.44,
+          "end": 33.76,
+          "probability": 0.07698943186551332
+        },
+        {
+          "word": " kena,",
+          "start": 33.76,
+          "end": 34.1,
+          "probability": 0.6944788694381714
+        },
+        {
+          "word": " nasi,",
+          "start": 34.4,
+          "end": 34.66,
+          "probability": 0.6040913388133049
+        }
+      ]
+    }
+  ],
+  "confidence_score": 1.0
+}

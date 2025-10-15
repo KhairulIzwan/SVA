@@ -1,0 +1,424 @@
+{
+  "video": "test_video.mp4",
+  "model": "tiny",
+  "configuration": "Auto-detect language",
+  "language": "la",
+  "text": " Kemerde kan, kemerde kan, daman, kan, asi, kurakde kan, kemerde kan, rekti, sekti, ah, usus, berang, rayan, berisi, nasi, bidanin, dan, dan, dan, si, ah, item ne kan sepan, da, ah, nasi, seha, manka ni, hali, seha nanka naji, ja ni, hali, hali, a Finance.",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 28.4,
+      "text": " Kemerde kan, kemerde kan, daman, kan, asi, kurakde kan, kemerde kan, rekti, sekti, ah, usus, berang, rayan, berisi, nasi, bidanin, dan, dan, dan, si, ah, item ne kan sepan, da, ah,",
+      "tokens": [
+        50364,
+        591,
+        29660,
+        1479,
+        4608,
+        11,
+        803,
+        936,
+        1479,
+        4608,
+        11,
+        2422,
+        282,
+        11,
+        4608,
+        11,
+        382,
+        72,
+        11,
+        10072,
+        514,
+        1479,
+        4608,
+        11,
+        803,
+        936,
+        1479,
+        4608,
+        11,
+        319,
+        2320,
+        72,
+        11,
+        369,
+        2320,
+        72,
+        11,
+        3716,
+        11,
+        505,
+        301,
+        11,
+        5948,
+        656,
+        11,
+        18592,
+        282,
+        11,
+        5948,
+        8021,
+        11,
+        5382,
+        72,
+        11,
+        12957,
+        282,
+        259,
+        11,
+        3277,
+        11,
+        3277,
+        11,
+        3277,
+        11,
+        1511,
+        11,
+        3716,
+        11,
+        309,
+        443,
+        408,
+        4608,
+        369,
+        6040,
+        11,
+        1120,
+        11,
+        3716,
+        11
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9675627708435058,
+      "compression_ratio": 1.7647058823529411,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " Kemerde",
+          "start": 0.0,
+          "end": 1.64,
+          "probability": 0.3228026156624158
+        },
+        {
+          "word": " kan,",
+          "start": 1.64,
+          "end": 2.38,
+          "probability": 0.16892847418785095
+        },
+        {
+          "word": " kemerde",
+          "start": 2.84,
+          "end": 4.74,
+          "probability": 0.5970910986264547
+        },
+        {
+          "word": " kan,",
+          "start": 4.74,
+          "end": 5.2,
+          "probability": 0.969531774520874
+        },
+        {
+          "word": " daman,",
+          "start": 5.68,
+          "end": 6.64,
+          "probability": 0.3776114955544472
+        },
+        {
+          "word": " kan,",
+          "start": 6.76,
+          "end": 7.48,
+          "probability": 0.08069389313459396
+        },
+        {
+          "word": " asi,",
+          "start": 8.26,
+          "end": 8.3,
+          "probability": 0.09043243899941444
+        },
+        {
+          "word": " kurakde",
+          "start": 8.48,
+          "end": 8.8,
+          "probability": 0.3999691978096962
+        },
+        {
+          "word": " kan,",
+          "start": 8.8,
+          "end": 9.62,
+          "probability": 0.8559715747833252
+        },
+        {
+          "word": " kemerde",
+          "start": 10.02,
+          "end": 10.16,
+          "probability": 0.9662720958391825
+        },
+        {
+          "word": " kan,",
+          "start": 10.16,
+          "end": 10.94,
+          "probability": 0.9950950145721436
+        },
+        {
+          "word": " rekti,",
+          "start": 11.14,
+          "end": 12.22,
+          "probability": 0.33540135622024536
+        },
+        {
+          "word": " sekti,",
+          "start": 12.82,
+          "end": 13.12,
+          "probability": 0.2861326237519582
+        },
+        {
+          "word": " ah,",
+          "start": 13.62,
+          "end": 13.9,
+          "probability": 0.14074862003326416
+        },
+        {
+          "word": " usus,",
+          "start": 13.92,
+          "end": 14.66,
+          "probability": 0.2475304678082466
+        },
+        {
+          "word": " berang,",
+          "start": 14.9,
+          "end": 15.3,
+          "probability": 0.056418889202177525
+        },
+        {
+          "word": " rayan,",
+          "start": 15.5,
+          "end": 16.22,
+          "probability": 0.42359398305416107
+        },
+        {
+          "word": " berisi,",
+          "start": 17.02,
+          "end": 17.6,
+          "probability": 0.6206303983926773
+        },
+        {
+          "word": " nasi,",
+          "start": 18.24,
+          "end": 19.32,
+          "probability": 0.8947595059871674
+        },
+        {
+          "word": " bidanin,",
+          "start": 20.04,
+          "end": 21.5,
+          "probability": 0.3523111790418625
+        },
+        {
+          "word": " dan,",
+          "start": 21.8,
+          "end": 22.22,
+          "probability": 0.2919498682022095
+        },
+        {
+          "word": " dan,",
+          "start": 22.36,
+          "end": 22.66,
+          "probability": 0.11209454387426376
+        },
+        {
+          "word": " dan,",
+          "start": 22.66,
+          "end": 23.02,
+          "probability": 0.041873760521411896
+        },
+        {
+          "word": " si,",
+          "start": 23.02,
+          "end": 23.62,
+          "probability": 0.328904390335083
+        },
+        {
+          "word": " ah,",
+          "start": 25.22,
+          "end": 25.48,
+          "probability": 0.13879171013832092
+        },
+        {
+          "word": " item",
+          "start": 26.38,
+          "end": 26.68,
+          "probability": 0.26192718744277954
+        },
+        {
+          "word": " ne",
+          "start": 26.68,
+          "end": 26.86,
+          "probability": 0.7077494859695435
+        },
+        {
+          "word": " kan",
+          "start": 26.86,
+          "end": 27.08,
+          "probability": 0.5774540305137634
+        },
+        {
+          "word": " sepan,",
+          "start": 27.08,
+          "end": 27.54,
+          "probability": 0.25694775953888893
+        },
+        {
+          "word": " da,",
+          "start": 27.76,
+          "end": 27.78,
+          "probability": 0.1993986964225769
+        },
+        {
+          "word": " ah,",
+          "start": 28.22,
+          "end": 28.4,
+          "probability": 0.643638014793396
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 2840,
+      "start": 30.86,
+      "end": 42.92,
+      "text": " nasi, seha, manka ni, hali, seha nanka naji, ja ni, hali, hali, a Finance.",
+      "tokens": [
+        50364,
+        5382,
+        72,
+        11,
+        369,
+        1641,
+        11,
+        275,
+        21729,
+        3867,
+        11,
+        324,
+        2081,
+        11,
+        369,
+        1641,
+        297,
+        21729,
+        297,
+        29319,
+        11,
+        2784,
+        3867,
+        11,
+        324,
+        2081,
+        11,
+        324,
+        2081,
+        11,
+        257,
+        25765,
+        13,
+        51064
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -2.652838134765625,
+      "compression_ratio": 1.3454545454545455,
+      "no_speech_prob": 0.10622184723615646,
+      "words": [
+        {
+          "word": " nasi,",
+          "start": 30.86,
+          "end": 31.94,
+          "probability": 0.3027500273892656
+        },
+        {
+          "word": " seha,",
+          "start": 32.58,
+          "end": 33.2,
+          "probability": 0.005873231857549399
+        },
+        {
+          "word": " manka",
+          "start": 33.44,
+          "end": 33.94,
+          "probability": 0.0006923007313162088
+        },
+        {
+          "word": " ni,",
+          "start": 33.94,
+          "end": 34.42,
+          "probability": 0.0019530110293999314
+        },
+        {
+          "word": " hali,",
+          "start": 34.84,
+          "end": 36.18,
+          "probability": 0.012051354395225644
+        },
+        {
+          "word": " seha",
+          "start": 36.64,
+          "end": 36.98,
+          "probability": 0.4709727168083191
+        },
+        {
+          "word": " nanka",
+          "start": 36.98,
+          "end": 37.56,
+          "probability": 0.442147109657526
+        },
+        {
+          "word": " naji,",
+          "start": 37.56,
+          "end": 38.42,
+          "probability": 0.05136534385383129
+        },
+        {
+          "word": " ja",
+          "start": 39.26,
+          "end": 39.3,
+          "probability": 0.018674667924642563
+        },
+        {
+          "word": " ni,",
+          "start": 39.3,
+          "end": 39.66,
+          "probability": 0.0033860160037875175
+        },
+        {
+          "word": " hali,",
+          "start": 40.1,
+          "end": 40.1,
+          "probability": 0.6674642115831375
+        },
+        {
+          "word": " hali,",
+          "start": 41.18,
+          "end": 41.18,
+          "probability": 0.6170182526111603
+        },
+        {
+          "word": " a",
+          "start": 42.92,
+          "end": 42.92,
+          "probability": 0.005453210324048996
+        },
+        {
+          "word": " Finance.",
+          "start": 42.92,
+          "end": 42.92,
+          "probability": 8.110952876450028e-06
+        }
+      ]
+    }
+  ],
+  "confidence_score": 0.9066666666666667
+}

@@ -1,0 +1,300 @@
+{
+  "video": "test_video.mp4",
+  "model": "tiny",
+  "configuration": "Force Malay (ms)",
+  "language": "ms",
+  "text": " Kamer-sekeran Kamer-sekerar parchmentасi laptop juga Kamer-hakan reti sempia hubus ber тер thing berisi Nazi cables.",
+  "duration": null,
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.88,
+      "end": 3.0,
+      "text": " Kamer-sekeran",
+      "tokens": [
+        50408,
+        11934,
+        260,
+        12,
+        405,
+        5767,
+        282,
+        50514
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " Kamer",
+          "start": 0.76,
+          "end": 1.46,
+          "probability": 0.2682468816637993
+        },
+        {
+          "word": "-sekeran",
+          "start": 1.46,
+          "end": 3.0,
+          "probability": 0.1967136377497809
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.62,
+      "end": 7.5,
+      "text": " Kamer-sekerar parchment",
+      "tokens": [
+        50565,
+        11934,
+        260,
+        12,
+        405,
+        5767,
+        289,
+        37208,
+        50739
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " Kamer",
+          "start": 3.62,
+          "end": 4.52,
+          "probability": 0.5081096831709146
+        },
+        {
+          "word": "-sekerar",
+          "start": 4.52,
+          "end": 5.24,
+          "probability": 0.6947474896442145
+        },
+        {
+          "word": " parchmentасi",
+          "start": 5.24,
+          "end": 7.5,
+          "probability": 0.13745563042236122
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.32,
+      "end": 10.08,
+      "text": "асi laptop juga",
+      "tokens": [
+        50739,
+        2019,
+        72,
+        10732,
+        14462,
+        50853
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " laptop",
+          "start": 8.32,
+          "end": 8.62,
+          "probability": 5.049760147812776e-05
+        },
+        {
+          "word": " juga",
+          "start": 8.62,
+          "end": 9.36,
+          "probability": 0.012731516733765602
+        },
+        {
+          "word": " Kamer",
+          "start": 9.36,
+          "end": 10.08,
+          "probability": 0.6446784734725952
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.08,
+      "end": 13.22,
+      "text": " Kamer-hakan reti",
+      "tokens": [
+        50854,
+        11934,
+        260,
+        12,
+        71,
+        14910,
+        1533,
+        72,
+        51006
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": "-hakan",
+          "start": 10.08,
+          "end": 10.66,
+          "probability": 0.3436297940594765
+        },
+        {
+          "word": " reti",
+          "start": 10.66,
+          "end": 12.2,
+          "probability": 0.331240875646472
+        },
+        {
+          "word": " sempia",
+          "start": 12.2,
+          "end": 13.22,
+          "probability": 0.15134588504830995
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 13.22,
+      "end": 19.1,
+      "text": " sempia hubus ber тер thing",
+      "tokens": [
+        51008,
+        369,
+        2455,
+        654,
+        11838,
+        301,
+        5948,
+        21168,
+        551,
+        51164
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " hubus",
+          "start": 13.22,
+          "end": 14.66,
+          "probability": 0.30197467491962016
+        },
+        {
+          "word": " ber",
+          "start": 14.66,
+          "end": 15.14,
+          "probability": 0.5839932560920715
+        },
+        {
+          "word": " тер",
+          "start": 15.14,
+          "end": 15.46,
+          "probability": 3.057953654206358e-05
+        },
+        {
+          "word": " thing",
+          "start": 15.46,
+          "end": 15.46,
+          "probability": 0.0004861809720750898
+        },
+        {
+          "word": " berisi",
+          "start": 15.46,
+          "end": 17.92,
+          "probability": 0.3604789227247238
+        },
+        {
+          "word": " Nazi",
+          "start": 17.92,
+          "end": 19.1,
+          "probability": 0.0010591023601591587
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 19.1,
+      "end": 21.56,
+      "text": " berisi Nazi",
+      "tokens": [
+        51164,
+        5948,
+        8021,
+        23592,
+        51332
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": [
+        {
+          "word": " diyat",
+          "start": 19.1,
+          "end": 20.38,
+          "probability": 0.21519724219160707
+        },
+        {
+          "word": " dis",
+          "start": 20.38,
+          "end": 21.56,
+          "probability": 0.005347928497940302
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 21.56,
+      "end": 21.56,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -3.5605657404119317,
+      "compression_ratio": 1.1217391304347826,
+      "no_speech_prob": 0.19757594168186188,
+      "words": []
+    },
+    {
+      "id": 7,
+      "seek": 2156,
+      "start": 21.56,
+      "end": 23.36,
+      "text": " cables.",
+      "tokens": [
+        50364,
+        17555,
+        13,
+        50864
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.522590255737304,
+      "compression_ratio": 0.4666666666666667,
+      "no_speech_prob": 0.32461056113243103,
+      "words": [
+        {
+          "word": " cables.",
+          "start": 21.56,
+          "end": 23.36,
+          "probability": 1.7216553942489554e-06
+        }
+      ]
+    }
+  ],
+  "confidence_score": 1.0
+}

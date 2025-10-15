@@ -1,0 +1,56 @@
+{
+  "test_summary": {
+    "test_completed": true,
+    "timestamp": "2025-10-15T09:55:03.897100",
+    "baseline_success_rate": 0.8,
+    "offline_success_rate": 0.8,
+    "network_isolation_effective": false
+  },
+  "component_comparison": {
+    "transcription": {
+      "baseline_success": true,
+      "offline_success": true,
+      "degradation": false,
+      "baseline_status": "Available offline",
+      "offline_status": "Available offline"
+    },
+    "vision": {
+      "baseline_success": true,
+      "offline_success": true,
+      "degradation": false,
+      "baseline_status": "Available offline",
+      "offline_status": "Available offline"
+    },
+    "generation": {
+      "baseline_success": true,
+      "offline_success": true,
+      "degradation": false,
+      "baseline_status": "Available offline",
+      "offline_status": "Available offline"
+    },
+    "router": {
+      "baseline_success": true,
+      "offline_success": true,
+      "degradation": false,
+      "baseline_status": "Available offline",
+      "offline_status": "Available offline"
+    },
+    "filesystem": {
+      "baseline_success": false,
+      "offline_success": false,
+      "degradation": false,
+      "baseline_status": "File operations: 3/4 successful",
+      "offline_status": "File operations: 3/4 successful"
+    }
+  },
+  "offline_compliance": {
+    "fully_offline": false,
+    "issues_found": [],
+    "recommendations": [
+      "Ensure all AI models are downloaded locally",
+      "Verify no components require internet access",
+      "Test with complete network isolation",
+      "Consider offline alternatives for failed components"
+    ]
+  }
+}
