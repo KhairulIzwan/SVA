@@ -1,0 +1,51 @@
+{
+  "check_date": "2025-10-15T22:52:35.515265",
+  "requirement": "OpenVINO-optimized or HuggingFace models",
+  "servers": {
+    "transcription": {
+      "compliant": true,
+      "model_source": "HuggingFace Transformers",
+      "model_name": "openai/whisper-small",
+      "status": "success",
+      "details": {
+        "model_source": "HuggingFace Transformers",
+        "model_type": "Whisper",
+        "compliant": true
+      }
+    },
+    "vision": {
+      "compliant": true,
+      "model_source": "HuggingFace Transformers",
+      "models_loaded": [
+        "DETR (HuggingFace)",
+        "TrOCR (HuggingFace)"
+      ],
+      "compliance_status": "HuggingFace Transformers",
+      "status": "success",
+      "details": {
+        "model_source": "HuggingFace Transformers",
+        "primary_models": [
+          "YOLOS",
+          "TrOCR"
+        ],
+        "fallback_models": [
+          "YOLO",
+          "EasyOCR"
+        ],
+        "compliant": true
+      }
+    },
+    "generation": {
+      "compliant": true,
+      "model_source": "Local Libraries (ReportLab, python-pptx)",
+      "note": "Uses local document generation libraries",
+      "status": "compliant"
+    }
+  },
+  "overall_compliance": true,
+  "summary": {
+    "compliant_servers": 3,
+    "total_servers": 3,
+    "compliance_percentage": 100.0
+  }
+}

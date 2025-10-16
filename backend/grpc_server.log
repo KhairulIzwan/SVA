@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/user/SVA/backend/grpc_server_fixed.py", line 13
+    import                     # Process text extraction results
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax

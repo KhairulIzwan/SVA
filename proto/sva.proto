@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+package sva;
+
+// Chat message structure
+message ChatMessage {
+  string id = 1;
+  string content = 2;
+  string role = 3;  // "user" or "assistant"
+  int64 timestamp = 4;
+  optional string file_path = 5;  // Optional file attachment
+}
+
+// Video analysis request
+message AnalyzeVideoRequest {
+  string video_path = 1;
+  string chat_id = 2;
+  repeated string analysis_types = 3;  // ["transcription", "vision", "generation"]
+}
+
+// Video analysis response
+message AnalyzeVideoResponse {
+  bool success = 1;
+  string message = 2;
+  optional TranscriptionResult transcription = 3;
+  optional VisionResult vision = 4;
+  optional string generated_report = 5;
+  double processing_time = 6;
+}
+
+// Transcription result
+message TranscriptionResult {
+  string text = 1;
+  string language = 2;
+  double confidence = 3;
+  double duration = 4;
+  repeated TranscriptionSegment segments = 5;
+  string method = 6;
+}
+
+// Transcription segment
+message TranscriptionSegment {
+  string text = 1;
+  double start = 2;
+  double end = 3;
+  double confidence = 4;
+}
+
+// Vision analysis result
+message VisionResult {
+  repeated DetectedObject objects_detected = 1;
+  repeated ExtractedText text_extracted = 2;
+  string scene_description = 3;
+  int32 frames_analyzed = 4;
+  double confidence = 5;
+  string processing_method = 6;
+  string compliance = 7;
+}
+
+// Detected object
+message DetectedObject {
+  string class_name = 1;
+  double confidence = 2;
+  int32 frame = 3;
+  double timestamp = 4;
+  BoundingBox bbox = 5;
+}
+
+// Bounding box coordinates
+message BoundingBox {
+  double x = 1;
+  double y = 2;
+  double width = 3;
+  double height = 4;
+}
+
+// Extracted text
+message ExtractedText {
+  string text = 1;
+  double confidence = 2;
+  int32 frame = 3;
+  double timestamp = 4;
+  BoundingBox bbox = 5;
+}
+
+// Chat history request
+message GetChatHistoryRequest {
+  string chat_id = 1;
+  int32 limit = 2;  // Optional: limit number of messages
+}
+
+// Chat history response
+message GetChatHistoryResponse {
+  repeated ChatMessage messages = 1;
+  string chat_id = 2;
+}
+
+// Send chat message request
+message SendChatMessageRequest {
+  string chat_id = 1;
+  string content = 2;
+  optional string file_path = 3;
+}
+
+// Send chat message response
+message SendChatMessageResponse {
+  ChatMessage user_message = 1;
+  ChatMessage assistant_response = 2;
+}
+
+// Server status request
+message ServerStatusRequest {}
+
+// Server status response
+message ServerStatusResponse {
+  bool transcription_online = 1;
+  bool vision_online = 2;
+  bool generation_online = 3;
+  bool router_online = 4;
+  string compliance_status = 5;
+}
+
+// SVA service definition
+service SVAService {
+  // Video analysis
+  rpc AnalyzeVideo(AnalyzeVideoRequest) returns (AnalyzeVideoResponse);
+  
+  // Chat operations
+  rpc SendChatMessage(SendChatMessageRequest) returns (SendChatMessageResponse);
+  rpc GetChatHistory(GetChatHistoryRequest) returns (GetChatHistoryResponse);
+  
+  // Server status
+  rpc GetServerStatus(ServerStatusRequest) returns (ServerStatusResponse);
+}

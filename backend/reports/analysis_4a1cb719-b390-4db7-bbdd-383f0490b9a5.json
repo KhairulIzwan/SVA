@@ -1,0 +1,749 @@
+{
+  "session_id": "4a1cb719-b390-4db7-bbdd-383f0490b9a5",
+  "timestamp": "2025-10-15 19:13:15",
+  "analysis_stages": {
+    "video_validation": {
+      "success": true,
+      "duration_seconds": 0.2419881820678711,
+      "data": {
+        "path": "../data/videos/test_video.mp4",
+        "resolution": "480x720",
+        "fps": 46.46286873015266,
+        "duration_seconds": 43.56166666666667,
+        "frame_count": 2024,
+        "file_size_mb": 7.031069755554199
+      },
+      "error": null,
+      "timestamp": "2025-10-15 19:13:15"
+    },
+    "audio_extraction": {
+      "success": true,
+      "duration_seconds": 0.28705596923828125,
+      "data": {
+        "temp_audio_path": "/tmp/tmpwdxvhtn9.wav",
+        "sample_rate": 16000,
+        "channels": 1
+      },
+      "error": null,
+      "timestamp": "2025-10-15 19:13:16"
+    },
+    "transcription": {
+      "success": true,
+      "duration_seconds": 21.805412769317627,
+      "data": {
+        "text": " K\u00f8benh\u00e6kken! K\u00f8benh\u00e6kken! Jamen! K\u00f8benh\u00e6kken! K\u00f8benh\u00e6kken! Ryrti! Sefj\u00e6f! Usf\u00f8sbejr\u00f8n, Rajad! Berisi! N\u00e6ssi! Vidanmin! Dan, Zatsi! H\u00e6m! I t\u00f8mh\u00e6kken! Selvvandar! N\u00e6ssi! Zatj\u00e6f! K\u00f8benh\u00e6kken! N\u00e6ssi! Ryrti! Ryrti! Zatj\u00e6f! N\u00e6ssi! Zatj\u00e6f! K\u00f8benh\u00e6kken! Ryrti! Ryrti!",
+        "language": "da",
+        "segments": [
+          {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 2.0,
+            "text": " K\u00f8benh\u00e6kken!",
+            "tokens": [
+              50364,
+              591,
+              6715,
+              1799,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              50464
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 1,
+            "seek": 0,
+            "start": 4.0,
+            "end": 5.0,
+            "text": " K\u00f8benh\u00e6kken!",
+            "tokens": [
+              50564,
+              591,
+              6715,
+              1799,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              50614
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 2,
+            "seek": 0,
+            "start": 5.0,
+            "end": 6.0,
+            "text": " Jamen!",
+            "tokens": [
+              50614,
+              10372,
+              268,
+              0,
+              50664
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 3,
+            "seek": 0,
+            "start": 7.0,
+            "end": 9.0,
+            "text": " K\u00f8benh\u00e6kken!",
+            "tokens": [
+              50714,
+              591,
+              6715,
+              1799,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              50814
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 4,
+            "seek": 0,
+            "start": 9.0,
+            "end": 10.0,
+            "text": " K\u00f8benh\u00e6kken!",
+            "tokens": [
+              50814,
+              591,
+              6715,
+              1799,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              50864
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 5,
+            "seek": 0,
+            "start": 10.0,
+            "end": 12.0,
+            "text": " Ryrti!",
+            "tokens": [
+              50864,
+              497,
+              6016,
+              7317,
+              0,
+              50964
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 6,
+            "seek": 0,
+            "start": 12.0,
+            "end": 13.0,
+            "text": " Sefj\u00e6f!",
+            "tokens": [
+              50964,
+              1100,
+              69,
+              73,
+              7303,
+              69,
+              0,
+              51014
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 7,
+            "seek": 0,
+            "start": 13.0,
+            "end": 16.0,
+            "text": " Usf\u00f8sbejr\u00f8n, Rajad!",
+            "tokens": [
+              51014,
+              4958,
+              69,
+              6715,
+              82,
+              650,
+              73,
+              81,
+              6715,
+              77,
+              11,
+              497,
+              1805,
+              345,
+              0,
+              51164
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 8,
+            "seek": 0,
+            "start": 16.0,
+            "end": 18.0,
+            "text": " Berisi!",
+            "tokens": [
+              51164,
+              5637,
+              8021,
+              0,
+              51264
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 9,
+            "seek": 0,
+            "start": 18.0,
+            "end": 19.0,
+            "text": " N\u00e6ssi!",
+            "tokens": [
+              51264,
+              426,
+              7303,
+              82,
+              7691,
+              0,
+              51314
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 10,
+            "seek": 0,
+            "start": 19.0,
+            "end": 21.0,
+            "text": " Vidanmin!",
+            "tokens": [
+              51314,
+              31185,
+              282,
+              2367,
+              0,
+              51414
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 11,
+            "seek": 0,
+            "start": 21.0,
+            "end": 24.0,
+            "text": " Dan, Zatsi!",
+            "tokens": [
+              51414,
+              3394,
+              11,
+              1176,
+              267,
+              7691,
+              0,
+              51564
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 12,
+            "seek": 0,
+            "start": 25.0,
+            "end": 26.0,
+            "text": " H\u00e6m!",
+            "tokens": [
+              51614,
+              389,
+              7303,
+              76,
+              0,
+              51664
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 13,
+            "seek": 0,
+            "start": 26.0,
+            "end": 27.0,
+            "text": " I t\u00f8mh\u00e6kken!",
+            "tokens": [
+              51664,
+              286,
+              256,
+              6715,
+              76,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              51714
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 14,
+            "seek": 0,
+            "start": 27.0,
+            "end": 28.0,
+            "text": " Selvvandar!",
+            "tokens": [
+              51714,
+              10736,
+              85,
+              85,
+              474,
+              289,
+              0,
+              51764
+            ],
+            "temperature": 0.4,
+            "avg_logprob": -0.8055959386149729,
+            "compression_ratio": 1.3671875,
+            "no_speech_prob": 0.4853755533695221
+          },
+          {
+            "id": 15,
+            "seek": 3000,
+            "start": 30.0,
+            "end": 32.0,
+            "text": " N\u00e6ssi!",
+            "tokens": [
+              50364,
+              426,
+              7303,
+              82,
+              7691,
+              0,
+              50464
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 16,
+            "seek": 3000,
+            "start": 32.0,
+            "end": 33.0,
+            "text": " Zatj\u00e6f!",
+            "tokens": [
+              50464,
+              1176,
+              267,
+              73,
+              7303,
+              69,
+              0,
+              50514
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 17,
+            "seek": 3000,
+            "start": 33.0,
+            "end": 34.0,
+            "text": " K\u00f8benh\u00e6kken!",
+            "tokens": [
+              50514,
+              591,
+              6715,
+              1799,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              50564
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 18,
+            "seek": 3000,
+            "start": 34.0,
+            "end": 35.0,
+            "text": " N\u00e6ssi!",
+            "tokens": [
+              50564,
+              426,
+              7303,
+              82,
+              7691,
+              0,
+              50614
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 19,
+            "seek": 3000,
+            "start": 35.0,
+            "end": 36.0,
+            "text": " Ryrti!",
+            "tokens": [
+              50614,
+              497,
+              6016,
+              7317,
+              0,
+              50664
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 20,
+            "seek": 3000,
+            "start": 36.0,
+            "end": 37.0,
+            "text": " Ryrti!",
+            "tokens": [
+              50664,
+              497,
+              6016,
+              7317,
+              0,
+              50714
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 21,
+            "seek": 3000,
+            "start": 37.0,
+            "end": 38.0,
+            "text": " Zatj\u00e6f!",
+            "tokens": [
+              50714,
+              1176,
+              267,
+              73,
+              7303,
+              69,
+              0,
+              50764
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 22,
+            "seek": 3000,
+            "start": 38.0,
+            "end": 39.0,
+            "text": " N\u00e6ssi!",
+            "tokens": [
+              50764,
+              426,
+              7303,
+              82,
+              7691,
+              0,
+              50814
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 23,
+            "seek": 3000,
+            "start": 39.0,
+            "end": 40.0,
+            "text": " Zatj\u00e6f!",
+            "tokens": [
+              50814,
+              1176,
+              267,
+              73,
+              7303,
+              69,
+              0,
+              50864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 24,
+            "seek": 3000,
+            "start": 40.0,
+            "end": 41.0,
+            "text": " K\u00f8benh\u00e6kken!",
+            "tokens": [
+              50864,
+              591,
+              6715,
+              1799,
+              71,
+              7303,
+              74,
+              2653,
+              0,
+              50914
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 25,
+            "seek": 3000,
+            "start": 41.0,
+            "end": 42.0,
+            "text": " Ryrti!",
+            "tokens": [
+              50914,
+              497,
+              6016,
+              7317,
+              0,
+              50964
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          },
+          {
+            "id": 26,
+            "seek": 3000,
+            "start": 42.0,
+            "end": 43.0,
+            "text": " Ryrti!",
+            "tokens": [
+              50964,
+              497,
+              6016,
+              7317,
+              0,
+              51014
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24037367502848309,
+            "compression_ratio": 1.894736842105263,
+            "no_speech_prob": 0.01593443565070629
+          }
+        ],
+        "method": "whisper_direct"
+      },
+      "error": null,
+      "timestamp": "2025-10-15 19:13:37"
+    },
+    "vision_analysis": {
+      "success": true,
+      "duration_seconds": 4.469825744628906,
+      "data": {
+        "method": "basic_opencv",
+        "frames_analyzed": 11,
+        "frame_data": [
+          {
+            "frame_number": 0,
+            "timestamp": 0.0,
+            "brightness": 50.71268807870371,
+            "has_motion": true
+          },
+          {
+            "frame_number": 202,
+            "timestamp": 4.3475576416337285,
+            "brightness": 53.705425347222224,
+            "has_motion": true
+          },
+          {
+            "frame_number": 404,
+            "timestamp": 8.695115283267457,
+            "brightness": 52.67962094907407,
+            "has_motion": true
+          },
+          {
+            "frame_number": 606,
+            "timestamp": 13.042672924901186,
+            "brightness": 51.49490162037037,
+            "has_motion": true
+          },
+          {
+            "frame_number": 808,
+            "timestamp": 17.390230566534914,
+            "brightness": 51.3979369212963,
+            "has_motion": true
+          },
+          {
+            "frame_number": 1010,
+            "timestamp": 21.73778820816864,
+            "brightness": 49.63412326388889,
+            "has_motion": true
+          },
+          {
+            "frame_number": 1212,
+            "timestamp": 26.085345849802373,
+            "brightness": 51.66039930555556,
+            "has_motion": true
+          },
+          {
+            "frame_number": 1414,
+            "timestamp": 30.4329034914361,
+            "brightness": 63.044780092592596,
+            "has_motion": true
+          },
+          {
+            "frame_number": 1616,
+            "timestamp": 34.78046113306983,
+            "brightness": 51.637311921296295,
+            "has_motion": true
+          },
+          {
+            "frame_number": 1818,
+            "timestamp": 39.128018774703555,
+            "brightness": 52.67232060185185,
+            "has_motion": true
+          },
+          {
+            "frame_number": 2020,
+            "timestamp": 43.47557641633728,
+            "brightness": 46.34357638888889,
+            "has_motion": true
+          }
+        ],
+        "average_brightness": 52.271189499158254,
+        "scene_changes": 11
+      },
+      "error": null,
+      "timestamp": "2025-10-15 19:13:42"
+    },
+    "summary_generation": {
+      "success": true,
+      "duration_seconds": 0.15939950942993164,
+      "data": {
+        "video_metadata": {
+          "path": "../data/videos/test_video.mp4",
+          "resolution": "480x720",
+          "fps": 46.46286873015266,
+          "duration_seconds": 43.56166666666667,
+          "frame_count": 2024,
+          "file_size_mb": 7.031069755554199
+        },
+        "content_analysis": {
+          "duration_minutes": 0.7260277777777778,
+          "speech_detected": true,
+          "language": "da",
+          "word_count": 30,
+          "scene_complexity": 11,
+          "visual_quality": 52.271189499158254
+        },
+        "key_insights": [
+          "Speech content detected and transcribed"
+        ],
+        "recommendations": [],
+        "basic_summary": "Video analysis of 43.6s content with 30 words transcribed.",
+        "generation_method": "basic_template"
+      },
+      "error": null,
+      "timestamp": "2025-10-15 19:13:42"
+    }
+  },
+  "performance_metrics": {
+    "total_processing_time": 26.963682174682617
+  },
+  "overall_success": true,
+  "errors": [],
+  "final_summary": {
+    "video_metadata": {
+      "path": "../data/videos/test_video.mp4",
+      "resolution": "480x720",
+      "fps": 46.46286873015266,
+      "duration_seconds": 43.56166666666667,
+      "frame_count": 2024,
+      "file_size_mb": 7.031069755554199
+    },
+    "content_analysis": {
+      "duration_minutes": 0.7260277777777778,
+      "speech_detected": true,
+      "language": "da",
+      "word_count": 30,
+      "scene_complexity": 11,
+      "visual_quality": 52.271189499158254
+    },
+    "key_insights": [
+      "Speech content detected and transcribed"
+    ],
+    "recommendations": [],
+    "basic_summary": "Video analysis of 43.6s content with 30 words transcribed.",
+    "generation_method": "basic_template"
+  }
+}

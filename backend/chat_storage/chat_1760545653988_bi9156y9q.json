@@ -1,0 +1,19 @@
+{
+  "chat_id": "chat_1760545653988_bi9156y9q",
+  "messages": [
+    {
+      "id": "05f843f8-d009-462e-82dc-efa8ad137f51",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760545696824,
+      "file_path": "test_video.mp4"
+    },
+    {
+      "id": "78a6e0f7-3c24-4a2f-a235-c2286051c465",
+      "content": "🎤 **Transcription (ms):**\nTerima kasih kerana menonton!",
+      "role": "assistant",
+      "timestamp": 1760545820569,
+      "file_path": null
+    }
+  ]
+}

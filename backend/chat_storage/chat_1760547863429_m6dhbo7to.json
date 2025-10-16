@@ -1,0 +1,75 @@
+{
+  "chat_id": "chat_1760547863429_m6dhbo7to",
+  "messages": [
+    {
+      "id": "10e779bd-3bef-4476-ad12-f69dc790ff64",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760547911639,
+      "file_path": "sample_test.mp4"
+    },
+    {
+      "id": "4ba85d91-80e6-4485-baa5-ffc6cb7a23f4",
+      "content": "❌ Analysis failed: Video file not found: sample_test.mp4",
+      "role": "assistant",
+      "timestamp": 1760547911641,
+      "file_path": null
+    },
+    {
+      "id": "a661dd9b-8808-48db-a053-f1562af346af",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760547932665,
+      "file_path": "test_video.mp4"
+    },
+    {
+      "id": "dfc6f6e4-24e9-4f9b-9030-208cde0984c1",
+      "content": "🎤 **Transcription (ms):**\\nTerima kasih kerana menonton!\\n\\n📄 **Analysis Report:**\\nReport generation completed",
+      "role": "assistant",
+      "timestamp": 1760548053082,
+      "file_path": null
+    },
+    {
+      "id": "34895068-9f69-4f80-a882-fb1862334b20",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760548499193,
+      "file_path": "test_video.mp4"
+    },
+    {
+      "id": "6966bbfe-b16a-4468-a36d-5b689565fb52",
+      "content": "🎤 **Transcription (ms):**\\nTerima kasih kerana menonton!\\n\\n👁️ **Vision Analysis:**\\n- Objects detected: 10\\n- Text elements: 10\\n- Scene: HuggingFace video analysis completed: 1 object types detected, 3 unique text elements found. Objects: sports ball. Text elements: ., 1, 1.\\n\\n📄 **Analysis Report:**\\nReport generation completed",
+      "role": "assistant",
+      "timestamp": 1760548644274,
+      "file_path": null
+    },
+    {
+      "id": "cdcebf7d-dca6-47b2-b7bd-5e77ce3869a0",
+      "content": "Analyze the transcription and summarize key topics",
+      "role": "user",
+      "timestamp": 1760548706890,
+      "file_path": "test_video.mp4"
+    },
+    {
+      "id": "f13f5d38-0c74-43e8-8032-58cda5197e01",
+      "content": "🎤 **Transcription (ms):**\\nTerima kasih kerana menonton!\\n\\n👁️ **Vision Analysis:**\\n- Objects detected: 10\\n- Text elements: 10\\n- Scene: HuggingFace video analysis completed: 1 object types detected, 3 unique text elements found. Objects: sports ball. Text elements: ., 1, 1.\\n\\n📄 **Analysis Report:**\\nReport generation completed",
+      "role": "assistant",
+      "timestamp": 1760548909825,
+      "file_path": null
+    },
+    {
+      "id": "2b81d05c-4d7b-4653-8c77-097f2f5feac3",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760549065312,
+      "file_path": "test_video.mp4"
+    },
+    {
+      "id": "ccb49411-0a76-44c5-9555-b6f0f9dfa40f",
+      "content": "🎤 **Transcription (ms):**\\nTerima kasih kerana menonton!\\n\\n👁️ **Vision Analysis:**\\n- Objects detected: 10\\n- Text elements: 10\\n- Scene: HuggingFace video analysis completed: 1 object types detected, 3 unique text elements found. Objects: sports ball. Text elements: 1., 1, .\\n\\n📄 **Analysis Report:**\\n📹 Video Analysis Summary\n==================================================\nFile: test_video.mp4\nAnalysis completed: 2025-10-16 01:26:46\n\n🎤 Audio Transcription (MS)\n==================================================\nConfidence: 0.95\n\nTranscribed Text:\n\"Terima kasih kerana menonton!\"\n\n👁️ Visual Content Analysis\n==================================================\nObjects detected: 10\nText elements found: 10\n\nTop objects: sports ball, sports ball, sports ball, sports ball, sports ball\n\nExtracted texts:\n• .\n• 1\n• .\n\n📊 Analysis Summary\n==================================================\nAnalysis types completed: 2\nReport generated: 2025-10-16 01:26:46\nProcessing: HuggingFace compliant models",
+      "role": "assistant",
+      "timestamp": 1760549206698,
+      "file_path": null
+    }
+  ]
+}

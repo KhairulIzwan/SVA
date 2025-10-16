@@ -107,6 +107,84 @@ class GenerationMCPServer:
             logger.error(f"❌ Generation server initialization failed: {e}")
             return {"status": "error", "error": str(e)}
     
+    async def generate_report(self, summary_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate a comprehensive analysis report from video analysis results"""
+        try:
+            logger.info("📊 Generating comprehensive video analysis report...")
+            
+            # Extract data from analysis results
+            video_path = summary_data.get('video_path', 'Unknown')
+            transcription_data = summary_data.get('transcription')
+            vision_data = summary_data.get('vision')
+            
+            # Create report content
+            report_sections = []
+            
+            # Video Information Section
+            report_sections.append({
+                "title": "📹 Video Analysis Summary",
+                "content": f"File: {Path(video_path).name}\nAnalysis completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            })
+            
+            # Transcription Section
+            if transcription_data and hasattr(transcription_data, 'text') and transcription_data.text:
+                language = getattr(transcription_data, 'language', 'unknown')
+                confidence = getattr(transcription_data, 'confidence', 0.0)
+                report_sections.append({
+                    "title": f"🎤 Audio Transcription ({language.upper()})",
+                    "content": f"Confidence: {confidence:.2f}\n\nTranscribed Text:\n\"{transcription_data.text}\""
+                })
+            
+            # Vision Analysis Section
+            if vision_data:
+                objects_count = len(getattr(vision_data, 'objects_detected', []))
+                texts_count = len(getattr(vision_data, 'text_extracted', []))
+                
+                vision_summary = f"Objects detected: {objects_count}\nText elements found: {texts_count}"
+                
+                # Add object details
+                if hasattr(vision_data, 'objects_detected') and vision_data.objects_detected:
+                    object_names = [obj.class_name for obj in vision_data.objects_detected[:5]]
+                    vision_summary += f"\n\nTop objects: {', '.join(object_names)}"
+                
+                # Add text details  
+                if hasattr(vision_data, 'text_extracted') and vision_data.text_extracted:
+                    text_snippets = [text.text[:50] + "..." if len(text.text) > 50 else text.text 
+                                   for text in vision_data.text_extracted[:3]]
+                    vision_summary += f"\n\nExtracted texts:\n" + "\n".join([f"• {text}" for text in text_snippets])
+                
+                report_sections.append({
+                    "title": "👁️ Visual Content Analysis",
+                    "content": vision_summary
+                })
+            
+            # Generate final report text
+            report_text = "\n\n".join([f"{section['title']}\n{'='*50}\n{section['content']}" 
+                                     for section in report_sections])
+            
+            # Add summary statistics
+            total_analysis_types = len([s for s in [transcription_data, vision_data] if s])
+            report_text += f"\n\n📊 Analysis Summary\n{'='*50}\n"
+            report_text += f"Analysis types completed: {total_analysis_types}\n"
+            report_text += f"Report generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+            report_text += "Processing: HuggingFace compliant models"
+            
+            return {
+                "status": "success",
+                "report_type": "comprehensive_analysis",
+                "report_text": report_text,
+                "sections_generated": len(report_sections),
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Report generation failed: {e}")
+            return {
+                "status": "error",
+                "error": str(e),
+                "report_text": f"Report generation failed: {str(e)}"
+            }
+    
     async def process_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
         """Main generation request handler"""
         action = request.get("action")

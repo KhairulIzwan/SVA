@@ -1,0 +1,33 @@
+{
+  "chat_id": "chat_1760543341767_c0xld9rch",
+  "messages": [
+    {
+      "id": "7e038525-cc3b-414a-8c59-54752e5b1fa6",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760543874386,
+      "file_path": "test_video.mp4"
+    },
+    {
+      "id": "a2bf91fb-af04-4fcb-8cdb-338d5cb38f85",
+      "content": "❌ Analysis failed: Video file not found: test_video.mp4",
+      "role": "assistant",
+      "timestamp": 1760543874389,
+      "file_path": null
+    },
+    {
+      "id": "3c2a353d-f80e-4257-95c6-c5d5497171d9",
+      "content": "Analyze the transcription and summarize key topics",
+      "role": "user",
+      "timestamp": 1760544904006,
+      "file_path": null
+    },
+    {
+      "id": "7964113f-d2ca-485c-adb5-a304b266081a",
+      "content": "I understand you want to analyze a video. Please upload a video file and I'll provide transcription, object detection, and text extraction using HuggingFace models.",
+      "role": "assistant",
+      "timestamp": 1760544904014,
+      "file_path": null
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+nohup: ignoring input
+INFO:__main__:📱 Chat storage initialized: chat_storage
+INFO:__main__:🤖 SVA gRPC Service initialized
+INFO:__main__:🚀 Starting SVA gRPC Server on [::]:50051
+INFO:__main__:📱 Frontend Requirements: ✅ gRPC Communication
+INFO:__main__:🤖 Backend: ✅ HuggingFace Compliant
+ERROR:__main__:❌ Server status error: 'SvaServiceServicer' object has no attribute 'servers_initialized'

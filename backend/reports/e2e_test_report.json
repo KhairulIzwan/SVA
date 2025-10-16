@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-10-15 16:43:46",
+  "tests": {
+    "python_environment": {
+      "success": true,
+      "stdout": "SUCCESS: All required packages imported\n",
+      "stderr": "",
+      "details": "Python environment and package verification"
+    },
+    "mcp_servers": {
+      "success": true,
+      "server_status": {
+        "transcription": {
+          "available": true,
+          "output": "OK",
+          "error": ""
+        },
+        "vision": {
+          "available": true,
+          "output": "OK",
+          "error": ""
+        },
+        "generation": {
+          "available": true,
+          "output": "OK",
+          "error": ""
+        },
+        "router": {
+          "available": true,
+          "output": "OK",
+          "error": ""
+        }
+      },
+      "details": "MCP server availability check"
+    },
+    "video_pipeline": {
+      "success": true,
+      "analysis_data": {
+        "success": true,
+        "session_id": "e2e_test_1760517832",
+        "summary": {
+          "video_metadata": {
+            "path": "/home/user/SVA/backend/test_videos/sample_test.mp4",
+            "resolution": "640x480",
+            "fps": 30.0,
+            "duration_seconds": 10.0,
+            "frame_count": 300,
+            "file_size_mb": 0.5681228637695312
+          },
+          "content_analysis": {
+            "duration_minutes": 0.16666666666666666,
+            "speech_detected": false,
+            "language": "en",
+            "word_count": 0,
+            "scene_complexity": 10,
+            "visual_quality": 79.9009677734375
+          },
+          "key_insights": [],
+          "recommendations": [],
+          "basic_summary": "Video analysis of 10.0s content with 0 words transcribed.",
+          "generation_method": "basic_template"
+        },
+        "processing_time": 8.076418161392212,
+        "results_path": "/home/user/SVA/backend/reports/analysis_e2e_test_1760517832.json"
+      },
+      "processing_time": "extracted from analysis_data if available",
+      "stdout": "{\n  \"success\": true,\n  \"session_id\": \"e2e_test_1760517832\",\n  \"summary\": {\n    \"video_metadata\": {\n      \"path\": \"/home/user/SVA/backend/test_videos/sample_test.mp4\",\n      \"resolution\": \"640x480\",\n      \"fps\": 30.0,\n      \"duration_seconds\": 10.0,\n      \"frame_count\": 300,\n      \"file_size_mb\": 0.5681228637695312\n    },\n    \"content_analysis\": {\n      \"duration_minutes\": 0.16666666666666666,\n      \"speech_detected\": false,\n      \"language\": \"en\",\n      \"word_count\": 0,\n      \"scene_complexity\":...",
+      "stderr": "2025-10-15 16:43:52,879 - INFO - \ud83d\ude80 Starting comprehensive analysis: /home/user/SVA/backend/test_videos/sample_test.mp4\n2025-10-15 16:43:52,879 - INFO - Session ID: e2e_test_1760517832\n2025-10-15 16:43:52,973 - INFO - \u2705 Video validation successful: 640x480, 10.0s\n2025-10-15 16:43:53,364 - INFO - \u2705 Audio extracted successfully\n/home/user/SVA/venv/lib/python3.12/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead\n  warnings.warn(\"FP16 is not supported on CPU; using FP32 instead\")\n2025-10-15 16:43:58,447 - INFO - \u2705 Transcription completed via direct Whisper\n2025-10-15 16:44:00,764 - INFO - \u2705 Vision analysis completed: 10 frames analyzed\n2025-10-15 16:44:00,972 - INFO - \u2705 Summary report generated\n2025-10-15 16:44:00,973 - INFO - \u2705 Results saved to: /home/user/SVA/backend/reports/analysis_e2e_test_1760517832.json\n2025-10-15 16:44:00,973 - INFO - \ud83c\udf89 Analysis completed successfully!\n",
+      "details": "Complete video analysis pipeline test"
+    },
+    "network_isolation": {
+      "success": true,
+      "stdout": "Network Isolation Test Results:\nOffline Success Rate: 0.9\nNetwork Isolation Effective: True\nSUCCESS: Offline operation validated\n",
+      "stderr": "",
+      "details": "Network isolation and offline operation test"
+    },
+    "frontend_integration": {
+      "success": true,
+      "stdout": "",
+      "stderr": "warning: struct `VideoAnalysisRequest` is never constructed\n --> src/lib.rs:7:8\n  |\n7 | struct VideoAnalysisRequest {\n  |        ^^^^^^^^^^^^^^^^^^^^\n  |\n  = note: `#[warn(dead_code)]` on by default\n\nwarning: `sva-tauri-app` (lib) generated 1 warning\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.94s\n",
+      "details": "Frontend-backend integration compilation check"
+    },
+    "error_handling": {
+      "success": true,
+      "error_tests": {
+        "non_existent_file": {
+          "expected_failure": true,
+          "actual_failure": true,
+          "test_passed": true,
+          "output": "{\n  \"success\": false,\n  \"session_id\": \"835c1ea8-7fac-440b-bc56-d9f6774c4280\",\n  \"error\": \"Video file not found: /non/existent/file.mp4\",\n  \"partial_results\": {\n    \"session_id\": \"835c1ea8-7fac-440b-bc...",
+          "error": "2025-10-15 16:44:03,732 - INFO - \ud83d\ude80 Starting comprehensive analysis: /non/existent/file.mp4\n2025-10-15 16:44:03,733 - INFO - Session ID: 835c1ea8-7fac-440b-bc56-d9f6774c4280\n2025-10-15 16:44:03,822 - E..."
+        },
+        "invalid_file_format": {
+          "expected_failure": true,
+          "actual_failure": true,
+          "test_passed": true,
+          "output": "{\n  \"success\": false,\n  \"session_id\": \"f2e25592-9cd2-4a1a-a538-a32761857db4\",\n  \"error\": \"Cannot open video file: /home/user/SVA/backend/e2e_test.py\",\n  \"partial_results\": {\n    \"session_id\": \"f2e2559...",
+          "error": "2025-10-15 16:44:03,896 - INFO - \ud83d\ude80 Starting comprehensive analysis: /home/user/SVA/backend/e2e_test.py\n2025-10-15 16:44:03,897 - INFO - Session ID: f2e25592-9cd2-4a1a-a538-a32761857db4\n2025-10-15 16:4..."
+        }
+      },
+      "details": "Error handling and graceful failure tests"
+    }
+  },
+  "overall_success": true,
+  "total_tests": 6,
+  "passed_tests": 6,
+  "failed_tests": 0
+}

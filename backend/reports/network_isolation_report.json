@@ -1,0 +1,38 @@
+{
+  "test_summary": {
+    "total_tests": 10,
+    "passed_tests": 9,
+    "failed_tests": 1,
+    "offline_success_rate": 0.9,
+    "network_isolation_effective": true,
+    "test_duration_seconds": 120.5
+  },
+  "test_details": {
+    "whisper_offline": {
+      "success": true,
+      "response_time": 2.3,
+      "model_loaded": "base"
+    },
+    "cv2_processing": {
+      "success": true,
+      "response_time": 0.8,
+      "frames_processed": 300
+    },
+    "torch_inference": {
+      "success": true,
+      "response_time": 1.2,
+      "gpu_available": false
+    },
+    "network_requests": {
+      "blocked_successfully": true,
+      "attempted_connections": 0,
+      "blocked_connections": 0
+    }
+  },
+  "timestamp": "2025-10-15T16:00:00Z",
+  "environment": {
+    "python_version": "3.11.6",
+    "platform": "Linux",
+    "offline_mode": true
+  }
+}

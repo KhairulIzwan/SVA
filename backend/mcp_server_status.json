@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-10-15T17:01:57",
+  "servers": {
+    "transcription": {
+      "status": "online",
+      "last_check": "2025-10-15T17:01:57",
+      "description": "Speech-to-text processing",
+      "capabilities": [
+        "audio_transcription",
+        "language_detection"
+      ]
+    },
+    "vision": {
+      "status": "online",
+      "last_check": "2025-10-15T17:01:57",
+      "description": "Computer vision analysis",
+      "capabilities": [
+        "object_detection",
+        "scene_analysis",
+        "text_extraction"
+      ]
+    },
+    "generation": {
+      "status": "online",
+      "last_check": "2025-10-15T17:01:57",
+      "description": "AI content generation",
+      "capabilities": [
+        "report_generation",
+        "summary_creation",
+        "insights"
+      ]
+    },
+    "router": {
+      "status": "online",
+      "last_check": "2025-10-15T17:01:57",
+      "description": "Request routing and coordination",
+      "capabilities": [
+        "request_routing",
+        "load_balancing",
+        "service_discovery"
+      ]
+    }
+  },
+  "overall_status": "operational",
+  "total_servers": 4,
+  "online_servers": 4
+}

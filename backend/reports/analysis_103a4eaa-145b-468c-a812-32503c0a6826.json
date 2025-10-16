@@ -1,0 +1,172 @@
+{
+  "session_id": "103a4eaa-145b-468c-a812-32503c0a6826",
+  "timestamp": "2025-10-15 18:33:45",
+  "analysis_stages": {
+    "video_validation": {
+      "success": true,
+      "duration_seconds": 0.1728839874267578,
+      "data": {
+        "path": "test_videos/sample_test.mp4",
+        "resolution": "640x480",
+        "fps": 30.0,
+        "duration_seconds": 10.0,
+        "frame_count": 300,
+        "file_size_mb": 0.5681228637695312
+      },
+      "error": null,
+      "timestamp": "2025-10-15 18:33:45"
+    },
+    "audio_extraction": {
+      "success": true,
+      "duration_seconds": 0.09821653366088867,
+      "data": {
+        "temp_audio_path": "/tmp/tmpbhb18zyc.wav",
+        "sample_rate": 16000,
+        "channels": 1
+      },
+      "error": null,
+      "timestamp": "2025-10-15 18:33:45"
+    },
+    "transcription": {
+      "success": true,
+      "duration_seconds": 8.479246854782104,
+      "data": {
+        "text": "",
+        "language": "en",
+        "segments": [],
+        "method": "whisper_direct"
+      },
+      "error": null,
+      "timestamp": "2025-10-15 18:33:54"
+    },
+    "vision_analysis": {
+      "success": true,
+      "duration_seconds": 2.003645896911621,
+      "data": {
+        "method": "basic_opencv",
+        "frames_analyzed": 10,
+        "frame_data": [
+          {
+            "frame_number": 0,
+            "timestamp": 0.0,
+            "brightness": 79.54719075520833,
+            "has_motion": true
+          },
+          {
+            "frame_number": 30,
+            "timestamp": 1.0,
+            "brightness": 79.46810872395834,
+            "has_motion": true
+          },
+          {
+            "frame_number": 60,
+            "timestamp": 2.0,
+            "brightness": 79.64580729166667,
+            "has_motion": true
+          },
+          {
+            "frame_number": 90,
+            "timestamp": 3.0,
+            "brightness": 79.62582682291666,
+            "has_motion": true
+          },
+          {
+            "frame_number": 120,
+            "timestamp": 4.0,
+            "brightness": 79.96656901041666,
+            "has_motion": true
+          },
+          {
+            "frame_number": 150,
+            "timestamp": 5.0,
+            "brightness": 79.96440755208333,
+            "has_motion": true
+          },
+          {
+            "frame_number": 180,
+            "timestamp": 6.0,
+            "brightness": 80.18388020833333,
+            "has_motion": true
+          },
+          {
+            "frame_number": 210,
+            "timestamp": 7.0,
+            "brightness": 80.116279296875,
+            "has_motion": true
+          },
+          {
+            "frame_number": 240,
+            "timestamp": 8.0,
+            "brightness": 80.26341796875,
+            "has_motion": true
+          },
+          {
+            "frame_number": 270,
+            "timestamp": 9.0,
+            "brightness": 80.22819010416667,
+            "has_motion": true
+          }
+        ],
+        "average_brightness": 79.9009677734375,
+        "scene_changes": 10
+      },
+      "error": null,
+      "timestamp": "2025-10-15 18:33:56"
+    },
+    "summary_generation": {
+      "success": true,
+      "duration_seconds": 0.15936803817749023,
+      "data": {
+        "video_metadata": {
+          "path": "test_videos/sample_test.mp4",
+          "resolution": "640x480",
+          "fps": 30.0,
+          "duration_seconds": 10.0,
+          "frame_count": 300,
+          "file_size_mb": 0.5681228637695312
+        },
+        "content_analysis": {
+          "duration_minutes": 0.16666666666666666,
+          "speech_detected": false,
+          "language": "en",
+          "word_count": 0,
+          "scene_complexity": 10,
+          "visual_quality": 79.9009677734375
+        },
+        "key_insights": [],
+        "recommendations": [],
+        "basic_summary": "Video analysis of 10.0s content with 0 words transcribed.",
+        "generation_method": "basic_template"
+      },
+      "error": null,
+      "timestamp": "2025-10-15 18:33:56"
+    }
+  },
+  "performance_metrics": {
+    "total_processing_time": 10.913361310958862
+  },
+  "overall_success": true,
+  "errors": [],
+  "final_summary": {
+    "video_metadata": {
+      "path": "test_videos/sample_test.mp4",
+      "resolution": "640x480",
+      "fps": 30.0,
+      "duration_seconds": 10.0,
+      "frame_count": 300,
+      "file_size_mb": 0.5681228637695312
+    },
+    "content_analysis": {
+      "duration_minutes": 0.16666666666666666,
+      "speech_detected": false,
+      "language": "en",
+      "word_count": 0,
+      "scene_complexity": 10,
+      "visual_quality": 79.9009677734375
+    },
+    "key_insights": [],
+    "recommendations": [],
+    "basic_summary": "Video analysis of 10.0s content with 0 words transcribed.",
+    "generation_method": "basic_template"
+  }
+}
