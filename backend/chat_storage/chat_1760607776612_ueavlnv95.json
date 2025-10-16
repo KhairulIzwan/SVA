@@ -1,0 +1,19 @@
+{
+  "chat_id": "chat_1760607776612_ueavlnv95",
+  "messages": [
+    {
+      "id": "f6776a63-a2de-4093-9090-9dd8cf4cce5c",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760607810829,
+      "file_path": "sample_video"
+    },
+    {
+      "id": "eb7d7193-f79c-4164-91db-5dff88e2f7a4",
+      "content": "📋 **All Text Found in Video:**\n\n🎤 **Spoken Text:**\n  1. \"so you got to get comfortable being uncomfortable if you ever want to be successful\"\n  2. \"if you stay in your comfort zone that's where you will fail you will fail in your\"\n  3. \"comfort zone success is not a comfortable procedure it is a very uncomfortable thing\"\n  4. \"to attempt so you got to get comfortable being uncomfortable if you ever want to be\"\n  5. \"successful if you stay in your comfort zone\"\n*Language: ms*\n\n🎯 **Scene Context:**\nVideo shows: tie, vase, person\n\n📊 **Summary:**\n• Total text sources found: 1\n• Spoken content: 1 audio track\n• Visual text: Minimal readable text detected",
+      "role": "assistant",
+      "timestamp": 1760607904133,
+      "file_path": null
+    }
+  ]
+}

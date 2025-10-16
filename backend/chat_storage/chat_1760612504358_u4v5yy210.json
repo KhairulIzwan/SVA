@@ -1,0 +1,12 @@
+{
+  "chat_id": "chat_1760612504358_u4v5yy210",
+  "messages": [
+    {
+      "id": "d9da10e9-b2de-45df-8399-3e09f2552b94",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760612547480,
+      "file_path": "sample_video"
+    }
+  ]
+}

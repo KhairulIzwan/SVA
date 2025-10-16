@@ -141,17 +141,28 @@ class GenerationMCPServer:
                 texts_count = len(getattr(vision_data, 'text_extracted', []))
                 
                 vision_summary = f"Objects detected: {objects_count}\nText elements found: {texts_count}"
+                vision_summary += f"\nFrames analyzed: {getattr(vision_data, 'frames_analyzed', 0)}"
+                vision_summary += f"\nProcessing method: {getattr(vision_data, 'processing_method', 'unknown')}"
+                vision_summary += f"\nScene description: {getattr(vision_data, 'scene_description', 'N/A')}"
                 
-                # Add object details
+                # Add detailed object information
                 if hasattr(vision_data, 'objects_detected') and vision_data.objects_detected:
-                    object_names = [obj.class_name for obj in vision_data.objects_detected[:5]]
-                    vision_summary += f"\n\nTop objects: {', '.join(object_names)}"
+                    vision_summary += f"\n\n📦 Detected Objects (Top {min(10, len(vision_data.objects_detected))}):"
+                    for i, obj in enumerate(vision_data.objects_detected[:10]):
+                        confidence = getattr(obj, 'confidence', 0.0)
+                        frame = getattr(obj, 'frame', 0)
+                        timestamp = getattr(obj, 'timestamp', 0.0)
+                        vision_summary += f"\n  {i+1}. {obj.class_name} (confidence: {confidence:.2f}, frame: {frame}, time: {timestamp:.1f}s)"
                 
-                # Add text details  
+                # Add detailed text extraction results  
                 if hasattr(vision_data, 'text_extracted') and vision_data.text_extracted:
-                    text_snippets = [text.text[:50] + "..." if len(text.text) > 50 else text.text 
-                                   for text in vision_data.text_extracted[:3]]
-                    vision_summary += f"\n\nExtracted texts:\n" + "\n".join([f"• {text}" for text in text_snippets])
+                    vision_summary += f"\n\n📖 Extracted Text (Top {min(10, len(vision_data.text_extracted))}):"
+                    for i, text in enumerate(vision_data.text_extracted[:10]):
+                        confidence = getattr(text, 'confidence', 0.0)
+                        frame = getattr(text, 'frame', 0)
+                        timestamp = getattr(text, 'timestamp', 0.0)
+                        text_content = text.text[:100] + "..." if len(text.text) > 100 else text.text
+                        vision_summary += f"\n  {i+1}. \"{text_content}\" (confidence: {confidence:.2f}, frame: {frame}, time: {timestamp:.1f}s)"
                 
                 report_sections.append({
                     "title": "👁️ Visual Content Analysis",

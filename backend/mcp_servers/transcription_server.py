@@ -118,7 +118,16 @@ class TranscriptionMCPServer:
                     })
             
             # Extract language (force Malay if specified)
-            detected_language = language if language != "auto" else "ms"
+            # Extract language - simplified approach
+            if language == "auto":
+                # For auto-detection, try to get language from result, otherwise default to English
+                if isinstance(result, dict) and 'language' in result:
+                    detected_language = result['language']
+                else:
+                    # If no language detected, assume English for the most common case
+                    detected_language = 'en'
+            else:
+                detected_language = language
             
             return {
                 "text": result["text"].strip(),

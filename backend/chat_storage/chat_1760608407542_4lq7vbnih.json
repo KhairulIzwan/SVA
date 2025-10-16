@@ -1,0 +1,47 @@
+{
+  "chat_id": "chat_1760608407542_4lq7vbnih",
+  "messages": [
+    {
+      "id": "66e6ad2f-218c-4403-92f7-f5580cfd5ca9",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760608446980,
+      "file_path": "sample_video"
+    },
+    {
+      "id": "6d961b34-754b-40a6-a1f3-924f95bb4db9",
+      "content": "📋 **All Text Found in Video:**\n\n🎤 **Spoken Text:**\n  1. \"so you got to get comfortable being uncomfortable if you ever want to be successful\"\n  2. \"if you stay in your comfort zone that's where you will fail you will fail in your\"\n  3. \"comfort zone success is not a comfortable procedure it is a very uncomfortable thing\"\n  4. \"to attempt so you got to get comfortable being uncomfortable if you ever want to be\"\n  5. \"successful if you stay in your comfort zone\"\n*Language: Malay*\n\n👁️ **Visual Text (On-screen):**\n  1. \":\" (85.0%) (at various)\n  2. \"1\" (85.0%) (at 2.7s)\n  3. \"AD\" (85.0%) (at 5.3s)\n  4. \":\" (85.0%) (at 8.0s)\n  5. \":\" (85.0%) (at 10.6s)\n  6. \":\" (85.0%) (at 13.3s)\n  7. \":\" (85.0%) (at 15.9s)\n  8. \"1\" (85.0%) (at 18.6s)\n  9. \":\" (85.0%) (at 21.2s)\n  10. \"AD\" (85.0%) (at 23.9s)\n  11. \":\" (85.0%) (at 26.6s)\n\n🎯 **Scene Context:**\nVideo shows: tie, person, vase\n\n📊 **Summary:**\n• Total text sources found: 12\n• Spoken content: 1 audio track\n• Visual text: 11 on-screen elements",
+      "role": "assistant",
+      "timestamp": 1760608543068,
+      "file_path": null
+    },
+    {
+      "id": "4cc706de-c5f7-4637-b7b4-e665adf568ac",
+      "content": "What objects are detected in the video?",
+      "role": "user",
+      "timestamp": 1760608621856,
+      "file_path": "sample_video"
+    },
+    {
+      "id": "ac798bae-8dda-4734-9aad-f122b8c46227",
+      "content": "🎯 **Objects Detected:**\n\n• person: 11 instances (avg confidence: 100%)\n• tie: 11 instances (avg confidence: 100%)\n• vase: 2 instances (avg confidence: 70%)\n• potted plant: 1 instances (avg confidence: 72%)",
+      "role": "assistant",
+      "timestamp": 1760608711231,
+      "file_path": null
+    },
+    {
+      "id": "172c8f77-5f4f-4a6f-8b0c-e8dc4e98f1d7",
+      "content": "Analyze the transcription and summarize key topics",
+      "role": "user",
+      "timestamp": 1760608749965,
+      "file_path": "sample_video"
+    },
+    {
+      "id": "6f2ccfa2-5ddf-4c93-a3b3-2f77dfd6bd19",
+      "content": "📋 **Video Summary:**\n\n🎤 **Main content:** so you got to get comfortable being uncomfortable if you ever want to be successful if you stay in y...\n👁️ **Scene:** Shows tie, person",
+      "role": "assistant",
+      "timestamp": 1760608856988,
+      "file_path": null
+    }
+  ]
+}

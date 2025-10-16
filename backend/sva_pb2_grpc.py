@@ -50,6 +50,16 @@ class SVAServiceStub(object):
                 request_serializer=sva__pb2.GetChatHistoryRequest.SerializeToString,
                 response_deserializer=sva__pb2.GetChatHistoryResponse.FromString,
                 _registered_method=True)
+        self.GenerateReport = channel.unary_unary(
+                '/sva.SVAService/GenerateReport',
+                request_serializer=sva__pb2.GenerateReportRequest.SerializeToString,
+                response_deserializer=sva__pb2.GenerateReportResponse.FromString,
+                _registered_method=True)
+        self.ListReports = channel.unary_unary(
+                '/sva.SVAService/ListReports',
+                request_serializer=sva__pb2.ListReportsRequest.SerializeToString,
+                response_deserializer=sva__pb2.ListReportsResponse.FromString,
+                _registered_method=True)
         self.GetServerStatus = channel.unary_unary(
                 '/sva.SVAService/GetServerStatus',
                 request_serializer=sva__pb2.ServerStatusRequest.SerializeToString,
@@ -81,6 +91,19 @@ class SVAServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateReport(self, request, context):
+        """Report generation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListReports(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetServerStatus(self, request, context):
         """Server status
         """
@@ -105,6 +128,16 @@ def add_SVAServiceServicer_to_server(servicer, server):
                     servicer.GetChatHistory,
                     request_deserializer=sva__pb2.GetChatHistoryRequest.FromString,
                     response_serializer=sva__pb2.GetChatHistoryResponse.SerializeToString,
+            ),
+            'GenerateReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateReport,
+                    request_deserializer=sva__pb2.GenerateReportRequest.FromString,
+                    response_serializer=sva__pb2.GenerateReportResponse.SerializeToString,
+            ),
+            'ListReports': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListReports,
+                    request_deserializer=sva__pb2.ListReportsRequest.FromString,
+                    response_serializer=sva__pb2.ListReportsResponse.SerializeToString,
             ),
             'GetServerStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetServerStatus,
@@ -194,6 +227,60 @@ class SVAService(object):
             '/sva.SVAService/GetChatHistory',
             sva__pb2.GetChatHistoryRequest.SerializeToString,
             sva__pb2.GetChatHistoryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sva.SVAService/GenerateReport',
+            sva__pb2.GenerateReportRequest.SerializeToString,
+            sva__pb2.GenerateReportResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListReports(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sva.SVAService/ListReports',
+            sva__pb2.ListReportsRequest.SerializeToString,
+            sva__pb2.ListReportsResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -120,6 +120,53 @@ message ServerStatusResponse {
   string compliance_status = 5;
 }
 
+// Report generation request
+message GenerateReportRequest {
+  string chat_id = 1;
+  string video_filename = 2;
+  string format_type = 3;  // "pdf", "ppt", "txt"
+  optional TranscriptionResult transcription_data = 4;
+  optional VisionResult vision_data = 5;
+  optional TopicAnalysis topic_data = 6;
+}
+
+// Topic analysis structure
+message TopicAnalysis {
+  repeated string themes = 1;
+  repeated string key_phrases = 2;
+  string content_type = 3;
+  string setting = 4;
+}
+
+// Report generation response
+message GenerateReportResponse {
+  bool success = 1;
+  string message = 2;
+  optional string filename = 3;
+  optional string filepath = 4;
+  optional string format = 5;
+  optional int64 size = 6;
+}
+
+// List reports request
+message ListReportsRequest {}
+
+// List reports response
+message ListReportsResponse {
+  bool success = 1;
+  repeated ReportInfo reports = 2;
+  string message = 3;
+}
+
+// Report information
+message ReportInfo {
+  string filename = 1;
+  string filepath = 2;
+  int64 size = 3;
+  string created = 4;
+  string format = 5;
+}
+
 // SVA service definition
 service SVAService {
   // Video analysis
@@ -128,6 +175,10 @@ service SVAService {
   // Chat operations
   rpc SendChatMessage(SendChatMessageRequest) returns (SendChatMessageResponse);
   rpc GetChatHistory(GetChatHistoryRequest) returns (GetChatHistoryResponse);
+  
+  // Report generation
+  rpc GenerateReport(GenerateReportRequest) returns (GenerateReportResponse);
+  rpc ListReports(ListReportsRequest) returns (ListReportsResponse);
   
   // Server status
   rpc GetServerStatus(ServerStatusRequest) returns (ServerStatusResponse);

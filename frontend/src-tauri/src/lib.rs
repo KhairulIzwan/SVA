@@ -53,6 +53,23 @@ struct ChatResponse {
     assistant_response: ChatMessage,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
+struct GenerateReportRequest {
+    chat_id: String,
+    video_filename: String,
+    format_type: String, // "pdf", "ppt", "txt"
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct ReportResponse {
+    success: bool,
+    filename: Option<String>,
+    filepath: Option<String>,
+    format: Option<String>,
+    size: Option<i64>,
+    message: String,
+}
+
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -334,17 +351,83 @@ async fn test_mcp_component(component: String, test_input: String) -> Result<ser
     }
 }
 
+// Generate report function
+#[tauri::command]
+async fn generate_report(request: GenerateReportRequest) -> Result<ReportResponse, String> {
+    match SvaServiceClient::connect("http://localhost:50051").await {
+        Ok(mut client) => {
+            let grpc_request = Request::new(sva::GenerateReportRequest {
+                chat_id: request.chat_id.clone(),
+                video_filename: request.video_filename.clone(),
+                format_type: request.format_type.clone(),
+                transcription_data: None, // Will be populated by backend from chat history
+                vision_data: None,        // Will be populated by backend from chat history
+                topic_data: None,         // Will be populated by backend from chat history
+            });
+            
+            match client.generate_report(grpc_request).await {
+                Ok(response) => {
+                    let report = response.into_inner();
+                    Ok(ReportResponse {
+                        success: report.success,
+                        filename: report.filename,
+                        filepath: report.filepath,
+                        format: report.format,
+                        size: report.size,
+                        message: report.message,
+                    })
+                }
+                Err(e) => {
+                    println!("gRPC generate_report failed: {}", e);
+                    Err(format!("Failed to generate report: {}", e))
+                }
+            }
+        }
+        Err(e) => {
+            println!("gRPC connection failed: {}", e);
+            Err(format!("gRPC connection failed: {}", e))
+        }
+    }
+}
+
+// Download file function
+#[tauri::command]
+async fn download_report(filepath: String, filename: String) -> Result<String, String> {
+    use tauri_plugin_dialog::DialogExt;
+    use std::fs;
+    
+    // For now, just copy to a user-accessible location
+    // In a real implementation, you'd use Tauri's save dialog
+    let home_dir = std::env::var("HOME").unwrap_or_else(|_| "/tmp".to_string());
+    let downloads_dir = format!("{}/Downloads", home_dir);
+    
+    // Ensure downloads directory exists
+    if let Err(e) = fs::create_dir_all(&downloads_dir) {
+        return Err(format!("Failed to create downloads directory: {}", e));
+    }
+    
+    let destination = format!("{}/{}", downloads_dir, filename);
+    
+    match fs::copy(&filepath, &destination) {
+        Ok(_) => Ok(destination),
+        Err(e) => Err(format!("Failed to copy file: {}", e))
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_dialog::init())
         .invoke_handler(tauri::generate_handler![
             greet, 
             analyze_video, 
             check_mcp_servers,
             start_mcp_servers,
             send_chat_message,
-            get_chat_history
+            get_chat_history,
+            generate_report,
+            download_report
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
