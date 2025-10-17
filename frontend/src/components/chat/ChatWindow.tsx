@@ -14,8 +14,9 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   
   // Generate a persistent chat session ID
-  const [chatId] = useState(() => `chat_${Date.now()}`);
+
   const [historyLoaded, setHistoryLoaded] = useState(false);
+  const [forceShowReports, setForceShowReports] = useState(false);
   
   // Load existing chat history on mount
   useEffect(() => {
@@ -23,17 +24,30 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
       if (historyLoaded) return;
       
       try {
-        // Try to load the specific chat that has your analysis
-        const specificChatId = 'chat_1760612609157_roif1fxx0';
+        // Try multiple potential chat IDs
+        const potentialChats = [
+          'chat_1760615431012_depbcl162',  // From your current file
+          'chat_1760612609157_roif1fxx0',  // Previous chat
+          'chat_1760613531111_c7s9m49r5'   // Another potential chat
+        ];
         
-        const chatHistory = await invoke('get_chat_history', { 
-          chat_id: specificChatId,
-          limit: 50 
-        }) as any[];
-        
-        if (chatHistory && chatHistory.length > 0) {
-          setMessages(chatHistory);
+        for (const chatId of potentialChats) {
+          try {
+            const chatHistory = await invoke('get_chat_history', { 
+              chat_id: chatId,
+              limit: 50 
+            }) as any[];
+            
+            if (chatHistory && chatHistory.length > 0) {
+              console.log(`Loaded chat history from ${chatId}:`, chatHistory.length, 'messages');
+              setMessages(chatHistory);
+              break; // Stop after finding first valid chat
+            }
+          } catch (e) {
+            console.log(`Chat ${chatId} not found, trying next...`);
+          }
         }
+        
         setHistoryLoaded(true);
       } catch (error) {
         console.error('Error loading chat history:', error);
@@ -48,12 +62,15 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
   const hasAnalysisResults = messages.some(msg => 
     msg.content.includes('📋 **All Text Found in Video:**') ||
     msg.content.includes('🎤 **Spoken Text:**') ||
-    msg.content.includes('👁️ **Visual Text') ||
-    msg.content.includes('🎯 **Scene Context:') ||
-    msg.content.includes('📊 **Summary:') ||
+    msg.content.includes('👁️ **Visual Text (On-screen):**') ||
+    msg.content.includes('🎯 **Scene Context:**') ||
+    msg.content.includes('📊 **Summary:**') ||
     msg.content.includes('Analysis completed') ||
     msg.content.includes('Objects detected:') ||
-    msg.content.includes('Text elements found:')
+    msg.content.includes('Text elements found:') ||
+    msg.content.includes('Total text sources found:') ||
+    msg.content.includes('Spoken content:') ||
+    msg.content.includes('Visual text:')
   );
   
   // Auto-scroll to bottom when new messages arrive
@@ -64,22 +81,42 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
   return (
     <div className="chat-window">
       <div className="chat-messages">
-        {/* Debug info box - shows directly in the app */}
+        {/* ALWAYS show debug info */}
         <div style={{
-          padding: '10px', 
-          fontSize: '14px', 
-          backgroundColor: '#f0f0f0', 
-          border: '1px solid #ddd',
-          borderRadius: '5px',
-          margin: '10px'
+          padding: '15px', 
+          fontSize: '16px', 
+          backgroundColor: '#e3f2fd', 
+          border: '2px solid #2196f3',
+          borderRadius: '8px',
+          margin: '10px',
+          fontFamily: 'monospace'
         }}>
-          <strong>🔧 Debug Info:</strong><br/>
-          📊 Messages loaded: {messages.length}<br/>
-          🔍 Analysis detected: {hasAnalysisResults ? '✅ YES' : '❌ NO'}<br/>
-          📁 Chat history loaded: {historyLoaded ? '✅ YES' : '⏳ Loading...'}<br/>
+          <div style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '10px'}}>🔧 SVA DEBUG PANEL</div>
+          <div>📊 Messages: {messages.length}</div>
+          <div>🔍 Analysis: {hasAnalysisResults ? '✅ DETECTED' : '❌ NOT FOUND'}</div>
+          <div>📁 History: {historyLoaded ? '✅ LOADED' : '⏳ Loading...'}</div>
+          <div>🎯 Loading: {isLoading ? '⏳ YES' : '✅ NO'}</div>
           {messages.length > 0 && (
-            <div>📝 Latest message: "{messages[messages.length - 1]?.content?.substring(0, 50)}..."</div>
+            <div style={{marginTop: '10px', padding: '5px', backgroundColor: '#fff'}}>
+              <div>📝 Last Message: {messages[messages.length - 1]?.role}</div>
+              <div>� Content: {messages[messages.length - 1]?.content?.substring(0, 100)}...</div>
+            </div>
           )}
+          <button 
+            onClick={() => setForceShowReports(!forceShowReports)}
+            style={{
+              marginTop: '10px',
+              padding: '10px 20px',
+              backgroundColor: '#4caf50',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '14px'
+            }}
+          >
+            🔧 {forceShowReports ? 'Hide' : 'Force Show'} Report Controls
+          </button>
         </div>
 
         {messages.length === 0 && !isLoading && historyLoaded && (
@@ -94,6 +131,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
                 <li>📄 <strong>Generate reports</strong> combining all analysis</li>
               </ul>
               <p>Upload a video file or type a message to get started!</p>
+              
               <div className="compliance-badge">
                 ✅ <strong>100% HuggingFace Compliant</strong> - All AI models run locally
               </div>
@@ -114,8 +152,8 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
           </div>
         )}
         
-        {/* Show report generation controls when we have analysis results */}
-        {hasAnalysisResults && !isLoading && (
+        {/* ALWAYS show report generation controls when we have analysis OR force mode */}
+        {(hasAnalysisResults || forceShowReports) && !isLoading && (
           <div className="report-section">
             <div style={{
               padding: '15px', 
@@ -126,9 +164,9 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isLoading = false }) => 
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              🎯 Analysis Results Detected! Report generation available below:
+              🎯 {hasAnalysisResults ? 'Analysis Results Detected!' : 'Force Mode Enabled!'} Report generation available below:
             </div>
-            <ReportControls chatId={chatId} />
+            <ReportControls chatId="chat_1760615431012_depbcl162" />
           </div>
         )}
         

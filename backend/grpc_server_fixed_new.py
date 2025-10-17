@@ -780,101 +780,13 @@ class SvaServiceServicer(sva_pb2_grpc.SVAServiceServicer):
     async def GenerateReport(self, request, context):
         """Generate downloadable report from analysis data"""
         try:
-            logger.info(f"📊 Generating {request.format_type} report for {request.video_filename}")
+            logger.info(f"📊 Generating {request.format_type} report for chat {request.chat_id}")
             
-            # Extract analysis data from the request
-            analysis_data = {}
-            
-            # Extract transcription data
-            if request.transcription_data:
-                transcription_data = request.transcription_data
-                if hasattr(transcription_data, 'text') and transcription_data.text:
-                    # Convert segments to list format
-                    spoken_text = []
-                    if hasattr(transcription_data, 'segments') and transcription_data.segments:
-                        for segment in transcription_data.segments:
-                            if hasattr(segment, 'text') and segment.text.strip():
-                                spoken_text.append(segment.text.strip())
-                    else:
-                        # Split text into chunks if no segments
-                        text = transcription_data.text.strip()
-                        if text:
-                            words = text.split()
-                            chunk_size = 15
-                            for i in range(0, len(words), chunk_size):
-                                chunk = ' '.join(words[i:i + chunk_size])
-                                spoken_text.append(chunk)
-                    
-                    analysis_data['spoken_text'] = spoken_text
-                    analysis_data['language'] = getattr(transcription_data, 'language', 'Auto-detected')
-            
-            # Extract vision data
-            if request.vision_data:
-                vision_data = request.vision_data
-                
-                # Extract visual text
-                if hasattr(vision_data, 'text_extracted') and vision_data.text_extracted:
-                    visual_text = []
-                    for text_item in vision_data.text_extracted:
-                        if hasattr(text_item, 'text') and text_item.text:
-                            visual_text.append({
-                                'text': text_item.text,
-                                'confidence': getattr(text_item, 'confidence', 0),
-                                'timestamp': getattr(text_item, 'timestamp', 0)
-                            })
-                    analysis_data['visual_text'] = visual_text
-                
-                # Extract objects
-                if hasattr(vision_data, 'objects_detected') and vision_data.objects_detected:
-                    objects = []
-                    object_counts = {}
-                    
-                    for obj in vision_data.objects_detected:
-                        if hasattr(obj, 'class_name') and obj.class_name:
-                            label = obj.class_name
-                            confidence = getattr(obj, 'confidence', 0)
-                            
-                            if label not in object_counts:
-                                object_counts[label] = {'count': 0, 'confidences': []}
-                            
-                            object_counts[label]['count'] += 1
-                            object_counts[label]['confidences'].append(confidence)
-                    
-                    # Convert to list format
-                    for label, data in object_counts.items():
-                        avg_confidence = sum(data['confidences']) / len(data['confidences'])
-                        objects.append({
-                            'label': label,
-                            'count': data['count'],
-                            'confidence': avg_confidence
-                        })
-                    
-                    analysis_data['objects'] = objects
-            
-            # Extract topic analysis data
-            if request.topic_data:
-                topic_data = request.topic_data
-                topics = {}
-                
-                if hasattr(topic_data, 'themes') and topic_data.themes:
-                    topics['themes'] = list(topic_data.themes)
-                
-                if hasattr(topic_data, 'key_phrases') and topic_data.key_phrases:
-                    topics['key_phrases'] = list(topic_data.key_phrases)
-                
-                if hasattr(topic_data, 'content_type') and topic_data.content_type:
-                    topics['content_type'] = topic_data.content_type
-                
-                if hasattr(topic_data, 'setting') and topic_data.setting:
-                    topics['setting'] = topic_data.setting
-                
-                analysis_data['topics'] = topics
-            
-            # Generate the report
-            result = self.report_server.generate_analysis_report(
-                analysis_data, 
-                request.video_filename or "unknown_video", 
-                request.format_type or "pdf"
+            # Use the new method that reads actual chat data
+            result = self.report_server.generate_report_from_chat(
+                chat_id=request.chat_id,
+                video_filename=request.video_filename or "unknown_video", 
+                format_type=request.format_type or "pdf"
             )
             
             if result["success"]:

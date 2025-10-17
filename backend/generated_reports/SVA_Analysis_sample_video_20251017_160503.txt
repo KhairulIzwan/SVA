@@ -1,0 +1,31 @@
+🎬 SVA VIDEO ANALYSIS REPORT
+==================================================
+
+Video File: sample_video
+Analysis Date: 2025-10-17 16:05:03
+Analysis Engine: SVA HuggingFace Compliant System
+
+EXECUTIVE SUMMARY:
+--------------------
+This comprehensive analysis identified 8 text sources and 0 object types. Audio analysis detected 5 speech segments in auto-detected language. Visual text recognition found 3 on-screen text elements. All analysis was performed using local AI models ensuring complete privacy and offline operation.
+
+SPEECH TRANSCRIPTION:
+--------------------
+Language: Auto-detected
+
+1. "so you got to get comfortable being uncomfortable if you ever want to be successful"
+2. "if you stay in your comfort zone that's where you will fail you will fail in your"
+3. "comfort zone success is not a comfortable procedure it is a very uncomfortable thing"
+4. "to attempt so you got to get comfortable being uncomfortable if you ever want to be"
+5. "successful if you stay in your comfort zone"
+
+VISUAL TEXT RECOGNITION:
+--------------------
+
+TECHNICAL DETAILS:
+--------------------
+• Audio Analysis: HuggingFace Whisper with automatic language detection
+• Visual Recognition: DETR object detection + TrOCR text recognition
+• Content Analysis: Advanced NLP with thematic extraction
+• Processing: Local AI models (fully offline)
+• Report Generated: 2025-10-17 16:05:03

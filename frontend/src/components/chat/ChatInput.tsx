@@ -3,10 +3,17 @@ import './ChatInput.css';
 
 interface ChatInputProps {
   onSendMessage: (content: string, filePath?: string) => void;
+  onGenerateReport?: (format: string) => void;
   disabled?: boolean;
+  hasAnalysisResults?: boolean;
 }
 
-export const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, disabled = false }) => {
+export const ChatInput: React.FC<ChatInputProps> = ({ 
+  onSendMessage, 
+  onGenerateReport,
+  disabled = false, 
+  hasAnalysisResults = false 
+}) => {
   const [message, setMessage] = useState('');
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -141,6 +148,52 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, disabled = 
         >
           Extract text
         </button>
+        
+        {/* Report Generation Buttons - Only show when analysis is complete */}
+        {hasAnalysisResults && (
+          <>
+            <span style={{marginLeft: '10px', color: '#666'}}>Reports: </span>
+            <button
+              type="button"
+              onClick={() => onGenerateReport?.('pdf')}
+              className="example-query report-button"
+              disabled={disabled}
+              style={{
+                backgroundColor: '#e8f5e8',
+                borderColor: '#4caf50',
+                color: '#2e7d32'
+              }}
+            >
+              📄 PDF Report
+            </button>
+            <button
+              type="button"
+              onClick={() => onGenerateReport?.('ppt')}
+              className="example-query report-button"
+              disabled={disabled}
+              style={{
+                backgroundColor: '#e3f2fd',
+                borderColor: '#2196f3',
+                color: '#1565c0'
+              }}
+            >
+              📊 PPT Report
+            </button>
+            <button
+              type="button"
+              onClick={() => onGenerateReport?.('txt')}
+              className="example-query report-button"
+              disabled={disabled}
+              style={{
+                backgroundColor: '#fff3e0',
+                borderColor: '#ff9800',
+                color: '#e65100'
+              }}
+            >
+              📝 TXT Report
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

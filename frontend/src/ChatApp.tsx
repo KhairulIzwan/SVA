@@ -36,11 +36,28 @@ export const ChatApp: React.FC = () => {
     setLoading,
     addMessage,
     createNewChat,
+    messages,
   } = useChatStore();
   
   const [mcpStatus, setMcpStatus] = useState<MCPServerStatus | null>(null);
   const [serverStatusChecking, setServerStatusChecking] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
+  const forceShowReports = false;
+
+  // Check if we have analysis results for enabling report buttons
+  const hasAnalysisResults = forceShowReports || messages.some(msg => 
+    msg.content.includes('📋 **All Text Found in Video:**') ||
+    msg.content.includes('🎤 **Spoken Text:**') ||
+    msg.content.includes('👁️ **Visual Text (On-screen):**') ||
+    msg.content.includes('🎯 **Scene Context:**') ||
+    msg.content.includes('📊 **Summary:**') ||
+    msg.content.includes('Analysis completed') ||
+    msg.content.includes('Objects detected:') ||
+    msg.content.includes('Total text sources found:') ||
+    msg.content.includes('**All Text Found in Video:**') ||
+    msg.content.includes('**Spoken Text:**') ||
+    msg.content.includes('**Summary:**')
+  );
 
   // Initialize chat on mount
   useEffect(() => {
@@ -48,7 +65,31 @@ export const ChatApp: React.FC = () => {
       createNewChat();
     }
     checkMCPServers();
+    loadExistingChat();
   }, [currentChatId, createNewChat]);
+
+  const loadExistingChat = async () => {
+    try {
+      // Try to load the specific chat with analysis
+      const chatHistory = await invoke('get_chat_history', { 
+        chat_id: 'chat_1760615431012_depbcl162',
+        limit: 50 
+      }) as any[];
+      
+      if (chatHistory && chatHistory.length > 0) {
+        console.log('Loaded existing chat with', chatHistory.length, 'messages');
+        // Add messages to store
+        chatHistory.forEach(msg => {
+          addMessage({
+            ...msg,
+            role: msg.role as 'user' | 'assistant'
+          });
+        });
+      }
+    } catch (error) {
+      console.log('No existing chat found:', error);
+    }
+  };
 
   const checkMCPServers = async () => {
     setServerStatusChecking(true);
@@ -62,7 +103,7 @@ export const ChatApp: React.FC = () => {
         transcription: false,
         vision: false,
         generation: false,
-        router: false,
+        router: false
       });
       setIsConnected(false);
     } finally {
@@ -70,71 +111,169 @@ export const ChatApp: React.FC = () => {
     }
   };
 
-  const startMCPServers = async () => {
+  // const startMCPServers = async () => {
+  //   try {
+  //     setLoading(true);
+  //     await invoke('start_mcp_servers');
+  //     // Wait a moment for servers to start
+  //     setTimeout(() => {
+  //       checkMCPServers();
+  //       setLoading(false);
+  //     }, 3000);
+  //   } catch (error) {
+  //     console.error('Failed to start gRPC servers:', error);
+  //     setLoading(false);
+  //   }
+  // };
+
+    const handleSendMessage = async (content: string, filePath?: string) => {
+    // Ensure we have a chat ID - create one if needed
+    let chatId = currentChatId;
+    if (!chatId) {
+      chatId = createNewChat();
+      console.log('🆕 Created new chat for analysis:', chatId);
+    }
+
     try {
       setLoading(true);
-      await invoke('start_mcp_servers');
-      // Wait a moment for servers to start
-      setTimeout(() => {
-        checkMCPServers();
-        setLoading(false);
-      }, 3000);
-    } catch (error) {
-      console.error('Failed to start gRPC servers:', error);
-      setLoading(false);
-    }
-  };
 
-  const handleSendMessage = async (content: string, filePath?: string) => {
-    if (!isConnected) {
-      alert('gRPC servers are not running. Please start the servers first.');
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      // Send message via gRPC
       const response = await invoke('send_chat_message', {
-        chatId: currentChatId,
+        chatId: chatId,
         content,
-        filePath: filePath || null,
+        filePath
       }) as ChatResponse;
 
-      // Add both messages to the chat
+      // Add both messages to the store
       addMessage({
-        id: response.user_message.id,
-        content: response.user_message.content,
-        role: response.user_message.role as 'user' | 'assistant',
-        timestamp: response.user_message.timestamp,
-        file_path: response.user_message.file_path,
+        ...response.user_message,
+        role: response.user_message.role as 'user' | 'assistant'
       });
-
       addMessage({
-        id: response.assistant_response.id,
-        content: response.assistant_response.content,
-        role: response.assistant_response.role as 'user' | 'assistant',
-        timestamp: response.assistant_response.timestamp,
-        file_path: response.assistant_response.file_path,
+        ...response.assistant_response,
+        role: response.assistant_response.role as 'user' | 'assistant'
       });
 
     } catch (error) {
       console.error('Failed to send message:', error);
       // Add error message
       addMessage({
-        id: `error_${Date.now()}`,
-        content: `❌ Error: ${error}. Make sure the gRPC server is running on port 50051.`,
+        id: Date.now().toString(),
+        content: `Error: ${error}`,
         role: 'assistant',
-        timestamp: Date.now(),
+        timestamp: Date.now()
       });
     } finally {
       setLoading(false);
     }
   };
 
-  const handleNewChat = () => {
-    createNewChat();
+  const handleGenerateReport = async (format: string) => {
+    try {
+      setLoading(true);
+      
+      // Debug: Check what chat ID we're using
+      console.log('🔍 Current Chat ID for report:', currentChatId);
+      console.log('🔍 Messages count:', messages.length);
+      
+      if (!currentChatId) {
+        // Try to find the most recent chat with analysis data
+        const state = useChatStore.getState();
+        const chatEntries = Object.entries(state.chats);
+        let latestChatId = null;
+        let latestTimestamp = 0;
+        
+        for (const [chatId, msgs] of chatEntries) {
+          const hasAnalysis = msgs.some(msg => 
+            msg.content.includes('📋 **All Text Found in Video:**') ||
+            msg.content.includes('🎤 **Spoken Text:**')
+          );
+          if (hasAnalysis) {
+            const lastMsg = msgs[msgs.length - 1];
+            if (lastMsg && lastMsg.timestamp > latestTimestamp) {
+              latestTimestamp = lastMsg.timestamp;
+              latestChatId = chatId;
+            }
+          }
+        }
+        
+        if (latestChatId) {
+          console.log('📊 Using latest chat with analysis:', latestChatId);
+          var actualChatId = latestChatId;
+        } else {
+          throw new Error('No chat session with analysis found. Please analyze a video first.');
+        }
+      } else {
+        var actualChatId = currentChatId;
+      }
+      
+      // Extract the actual video filename from chat messages
+      let videoFilename = 'unknown_video';
+      let originalUploadName = 'unknown_video';
+      
+      const userMessages = messages.filter(msg => msg.role === 'user' && msg.file_path);
+      if (userMessages.length > 0) {
+        const filePath = userMessages[userMessages.length - 1].file_path; // Get most recent
+        if (filePath) {
+          // Extract filename from path
+          videoFilename = filePath.split('/').pop() || filePath;
+          
+          // If the path contains a constructed path (like /home/user/SVA/data/videos/filename),
+          // try to get the original upload name from the user's input content
+          const userContent = userMessages[userMessages.length - 1].content;
+          if (userContent && userContent.toLowerCase().includes('video')) {
+            // Look for mentions of specific video names in the user's message
+            const videoExtensions = ['.mp4', '.avi', '.mov', '.mkv', '.wmv', '.flv', '.webm'];
+            for (const ext of videoExtensions) {
+              if (userContent.includes(ext)) {
+                const beforeExt = userContent.split(ext)[0];
+                const words = beforeExt.split(/\s+/);
+                const lastWord = words[words.length - 1];
+                if (lastWord && lastWord.length > 2) {
+                  originalUploadName = lastWord + ext;
+                  break;
+                }
+              }
+            }
+          }
+          
+          console.log('📽️ Extracted video filename:', videoFilename);
+          console.log('🎬 Original upload name:', originalUploadName);
+        }
+      }
+      
+      const response = await invoke('generate_report', {
+        chatId: actualChatId, // Use the determined chat ID
+        videoFilename: originalUploadName !== 'unknown_video' ? originalUploadName : videoFilename, // Use original name if available
+        formatType: format
+      }) as any;
+
+      if (response.success) {
+        // Add success message to chat
+        addMessage({
+          id: Date.now().toString(),
+          content: `✅ **${format.toUpperCase()} Report Generated Successfully!**\n\n📄 **Filename:** ${response.filename}\n💾 **Size:** ${response.size} bytes\n📂 **Location:** Downloads folder\n\n📊 Your comprehensive video analysis report has been generated and saved!`,
+          role: 'assistant',
+          timestamp: Date.now()
+        });
+      } else {
+        throw new Error(response.message || 'Report generation failed');
+      }
+    } catch (error) {
+      console.error('Failed to generate report:', error);
+      addMessage({
+        id: Date.now().toString(),
+        content: `❌ **Report Generation Failed**\n\nError: ${error}\n\nPlease ensure the backend server is running and try again.`,
+        role: 'assistant',
+        timestamp: Date.now()
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
+  // const handleNewChat = () => {
+  //   createNewChat();
+  // };
 
   return (
     <div className="chat-app">
@@ -143,43 +282,28 @@ export const ChatApp: React.FC = () => {
         <div className="header-left">
           <h1>🤖 SVA - Smart Video Analyzer</h1>
           <div className="connection-status">
-            {serverStatusChecking ? (
-              <span className="status checking">🔄 Checking gRPC connection...</span>
-            ) : isConnected ? (
-              <span className="status connected">✅ gRPC Connected</span>
+            {isConnected ? (
+              <span className="status-connected">✅ gRPC Connected</span>
             ) : (
-              <span className="status disconnected">❌ gRPC Disconnected</span>
+              <span className="status-disconnected">❌ gRPC Disconnected</span>
             )}
           </div>
         </div>
         
         <div className="header-right">
           <button 
-            onClick={handleNewChat} 
-            className="new-chat-button"
-            title="Start new chat"
+            onClick={createNewChat}
+            className="new-chat-btn"
+            disabled={isLoading}
           >
             💬 New Chat
           </button>
-          
-          {!isConnected && (
-            <button 
-              onClick={startMCPServers} 
-              className="start-servers-button"
-              disabled={isLoading}
-              title="Start gRPC servers"
-            >
-              🚀 Start Servers
-            </button>
-          )}
-          
           <button 
-            onClick={checkMCPServers} 
-            className="refresh-button"
+            onClick={checkMCPServers}
+            className="refresh-btn"
             disabled={serverStatusChecking}
-            title="Refresh server status"
           >
-            🔄
+            {serverStatusChecking ? '⏳' : '🔄'}
           </button>
         </div>
       </div>
@@ -207,17 +331,16 @@ export const ChatApp: React.FC = () => {
         <ChatWindow isLoading={isLoading} />
         <ChatInput 
           onSendMessage={handleSendMessage} 
+          onGenerateReport={handleGenerateReport}
           disabled={isLoading || !isConnected} 
+          hasAnalysisResults={hasAnalysisResults}
         />
       </div>
 
       {/* Footer */}
       <div className="chat-footer">
         <span className="compliance-info">
-          ✅ <strong>Requirements Compliant:</strong> React + Tauri ✓ | Chat UI ✓ | Local Storage ✓ | gRPC Communication ✓
-        </span>
-        <span className="ai-info">
-          🤖 <strong>AI Models:</strong> HuggingFace Transformers | Whisper | DETR | TrOCR
+          ✅ <strong>Compliant:</strong> React + Tauri ✓ | Local Storage ✓ | gRPC ✓
         </span>
       </div>
     </div>

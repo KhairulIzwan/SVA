@@ -1,0 +1,18 @@
+🎬 SVA VIDEO ANALYSIS REPORT
+==================================================
+
+Video File: analyzed_video
+Analysis Date: 2025-10-17 06:38:18
+Analysis Engine: SVA HuggingFace Compliant System
+
+EXECUTIVE SUMMARY:
+--------------------
+This comprehensive analysis identified 0 text sources and 0 object types. All analysis was performed using local AI models ensuring complete privacy and offline operation.
+
+TECHNICAL DETAILS:
+--------------------
+• Audio Analysis: HuggingFace Whisper with automatic language detection
+• Visual Recognition: DETR object detection + TrOCR text recognition
+• Content Analysis: Advanced NLP with thematic extraction
+• Processing: Local AI models (fully offline)
+• Report Generated: 2025-10-17 06:38:18

@@ -1,0 +1,12 @@
+{
+  "chat_id": "chat_1760688647456_igv2ikaxy",
+  "messages": [
+    {
+      "id": "4cde7530-1482-419c-8de2-9052048fde73",
+      "content": "Extract and list all text found in the video",
+      "role": "user",
+      "timestamp": 1760688802234,
+      "file_path": "/home/user/SVA/data/videos/sample_video"
+    }
+  ]
+}

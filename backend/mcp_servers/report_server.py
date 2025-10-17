@@ -36,8 +36,204 @@ logger = logging.getLogger(__name__)
 class ReportGenerationServer:
     def __init__(self):
         self.output_dir = os.path.join(os.path.dirname(__file__), "..", "generated_reports")
+        self.chat_storage_dir = os.path.join(os.path.dirname(__file__), "..", "chat_storage")
         os.makedirs(self.output_dir, exist_ok=True)
         logger.info(f"📄 Report generation server initialized. Output directory: {self.output_dir}")
+        
+    def generate_report_from_chat(self, chat_id: str, video_filename: str, format_type: str = "pdf") -> Dict[str, Any]:
+        """Generate report by reading actual chat data"""
+        try:
+            # Read the chat file
+            chat_file = os.path.join(self.chat_storage_dir, f"{chat_id}.json")
+            if not os.path.exists(chat_file):
+                return {
+                    "success": False,
+                    "error": f"Chat file not found: {chat_id}",
+                    "filepath": None
+                }
+            
+            with open(chat_file, 'r') as f:
+                chat_data = json.load(f)
+            
+            # Extract analysis data from chat messages
+            analysis_data = self._extract_analysis_from_chat(chat_data)
+            
+            # Use the video filename extracted from chat data if available, otherwise use passed parameter
+            actual_video_filename = analysis_data.get('video_filename', 'unknown')
+            if actual_video_filename and actual_video_filename != 'unknown':
+                video_filename = actual_video_filename
+                logger.info(f"📽️ Using extracted video filename: {video_filename}")
+            else:
+                logger.info(f"📽️ Using passed video filename: {video_filename}")
+            
+            # Generate report with real data
+            return self.generate_analysis_report(analysis_data, video_filename, format_type)
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to generate report from chat {chat_id}: {e}")
+            return {
+                "success": False,
+                "error": f"Failed to read chat data: {str(e)}",
+                "filepath": None
+            }
+    
+    def _extract_analysis_from_chat(self, chat_data: Dict) -> Dict[str, Any]:
+        """Extract real analysis data from SVA chat messages"""
+        analysis_data = {
+            'chat_id': chat_data.get('chat_id', 'unknown'),
+            'video_filename': 'unknown',
+            'messages': chat_data.get('messages', []),
+            'spoken_text': [],
+            'visual_text': [],
+            'objects_detected': [],
+            'key_topics': [],
+            'executive_summary': 'Video Analysis Report',
+            'technical_details': {},
+            'analysis_timestamp': datetime.now().isoformat()
+        }
+        
+        # Parse messages to extract analysis content
+        for message in chat_data.get('messages', []):
+            content = message.get('content', '')
+            
+            # Extract video filename from user messages
+            if message.get('role') == 'user' and message.get('file_path'):
+                file_path = message.get('file_path', '')
+                user_content = message.get('content', '')
+                
+                # Method 1: Extract from file path
+                if '/' in file_path:
+                    path_filename = file_path.split('/')[-1]
+                else:
+                    path_filename = file_path
+                
+                # Method 2: Look for original filename in user message content
+                # Users often mention the original filename in their message
+                original_filename = None
+                if user_content:
+                    video_extensions = ['.mp4', '.avi', '.mov', '.mkv', '.wmv', '.flv', '.webm']
+                    words = user_content.split()
+                    for word in words:
+                        for ext in video_extensions:
+                            if ext.lower() in word.lower():
+                                # Found a word containing video extension
+                                original_filename = word.strip('",.:;!?')
+                                break
+                        if original_filename:
+                            break
+                
+                # Use original filename if found, otherwise use path filename
+                if original_filename and original_filename != path_filename:
+                    analysis_data['video_filename'] = original_filename
+                    analysis_data['original_filename'] = original_filename
+                    analysis_data['system_path'] = path_filename
+                    logger.info(f"📽️ Found original filename: {original_filename} (system: {path_filename})")
+                else:
+                    analysis_data['video_filename'] = path_filename
+                    logger.info(f"📽️ Using path filename: {path_filename}")
+            
+            # Extract spoken text
+            if '🎤 **Spoken Text:**' in content:
+                spoken_lines = []
+                lines = content.split('\n')
+                in_spoken_section = False
+                for line in lines:
+                    if '🎤 **Spoken Text:**' in line:
+                        in_spoken_section = True
+                        continue
+                    elif line.startswith('👁️') or line.startswith('*Language:'):
+                        in_spoken_section = False
+                        continue
+                    elif in_spoken_section and '"' in line:
+                        # Extract quoted text from numbered lines like: 1. "text here"
+                        if '"' in line:
+                            start_quote = line.find('"')
+                            end_quote = line.rfind('"')
+                            if start_quote != -1 and end_quote != -1 and start_quote != end_quote:
+                                spoken_text = line[start_quote+1:end_quote]
+                                if spoken_text.strip():
+                                    spoken_lines.append(spoken_text.strip())
+                analysis_data['spoken_text'] = spoken_lines
+            
+            # Extract visual text
+            if '👁️ **Visual Text (On-screen):**' in content:
+                visual_items = []
+                lines = content.split('\n')
+                in_visual_section = False
+                for line in lines:
+                    if '👁️ **Visual Text (On-screen):**' in line:
+                        in_visual_section = True
+                        continue
+                    elif line.startswith('🎯') or line.startswith('📊'):
+                        in_visual_section = False
+                        continue
+                    elif in_visual_section and '"' in line and '%' in line:
+                        # Extract visual text items
+                        parts = line.split('"')
+                        if len(parts) >= 2:
+                            visual_text = parts[1]
+                            if visual_text and visual_text not in visual_items:
+                                visual_items.append(visual_text)
+                analysis_data['visual_text'] = visual_items
+            
+            # Extract objects detected
+            if 'Video shows:' in content:
+                objects_line = content.split('Video shows:')[1].split('\n')[0].strip()
+                objects = [obj.strip() for obj in objects_line.split(',')]
+                analysis_data['objects_detected'] = objects
+            
+            # Extract key topics
+            if '💡 **Key Messages:**' in content or '🎯 **Main Themes:**' in content:
+                topics = []
+                lines = content.split('\n')
+                for line in lines:
+                    if ('•' in line or '•' in line) and ('mentioned' in line or 'success' in line or 'comfort' in line):
+                        topic = line.strip('• ').strip()
+                        if topic:
+                            topics.append(topic)
+                analysis_data['key_topics'] = topics
+        
+        # Create executive summary from extracted data
+        if analysis_data['spoken_text'] or analysis_data['visual_text'] or analysis_data['objects_detected']:
+            summary_parts = []
+            if analysis_data['spoken_text']:
+                summary_parts.append(f"Transcribed {len(analysis_data['spoken_text'])} spoken segments")
+            if analysis_data['visual_text']:
+                summary_parts.append(f"detected {len(analysis_data['visual_text'])} on-screen text elements")
+            if analysis_data['objects_detected']:
+                summary_parts.append(f"identified objects: {', '.join(analysis_data['objects_detected'])}")
+            
+            analysis_data['executive_summary'] = f"Comprehensive video analysis completed. {' and '.join(summary_parts)}."
+        
+        # Technical details
+        analysis_data['technical_details'] = {
+            'total_messages': len(chat_data.get('messages', [])),
+            'spoken_segments': len(analysis_data['spoken_text']),
+            'visual_elements': len(analysis_data['visual_text']),
+            'objects_count': len(analysis_data['objects_detected']),
+            'chat_duration': self._calculate_chat_duration(chat_data.get('messages', []))
+        }
+        
+        return analysis_data
+    
+    def _calculate_chat_duration(self, messages: List[Dict]) -> str:
+        """Calculate duration of chat session"""
+        if len(messages) < 2:
+            return "< 1 minute"
+        
+        first_timestamp = messages[0].get('timestamp', 0)
+        last_timestamp = messages[-1].get('timestamp', 0)
+        duration_ms = last_timestamp - first_timestamp
+        duration_minutes = duration_ms // 60000
+        
+        if duration_minutes < 1:
+            return "< 1 minute"
+        elif duration_minutes < 60:
+            return f"{duration_minutes} minutes"
+        else:
+            hours = duration_minutes // 60
+            minutes = duration_minutes % 60
+            return f"{hours}h {minutes}m"
         
     def generate_analysis_report(self, analysis_data: Dict[str, Any], video_filename: str, format_type: str = "pdf") -> Dict[str, Any]:
         """Generate comprehensive report from SVA analysis data"""
@@ -444,6 +640,13 @@ class ReportGenerationServer:
             f.write("🎬 SVA VIDEO ANALYSIS REPORT\n")
             f.write("=" * 50 + "\n\n")
             f.write(f"Video File: {video_name}\n")
+            
+            # Show additional filename info if available
+            if 'original_filename' in data and data['original_filename'] != video_name:
+                f.write(f"Original Upload: {data['original_filename']}\n")
+            if 'system_path' in data and data['system_path'] != video_name:
+                f.write(f"System Path: {data['system_path']}\n")
+                
             f.write(f"Analysis Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"Analysis Engine: SVA HuggingFace Compliant System\n\n")
             
