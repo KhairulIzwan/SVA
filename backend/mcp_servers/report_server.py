@@ -168,19 +168,92 @@ class ReportGenerationServer:
                         in_visual_section = False
                         continue
                     elif in_visual_section and '"' in line and '%' in line:
-                        # Extract visual text items
+                        # Extract visual text items with confidence and timestamp
+                        # Format: 1. "QUARTERLY REPORT 2024" (confidence: 95.2%, timestamp: 0:05)
                         parts = line.split('"')
                         if len(parts) >= 2:
                             visual_text = parts[1]
-                            if visual_text and visual_text not in visual_items:
-                                visual_items.append(visual_text)
+                            # Extract confidence and timing info from parentheses
+                            after_quote = line.split('"')[2] if len(line.split('"')) > 2 else ""
+                            
+                            confidence_val = ""
+                            timestamp_val = ""
+                            
+                            if '(' in after_quote and ')' in after_quote:
+                                parentheses_content = after_quote.split('(')[1].split(')')[0]
+                                
+                                # Extract confidence percentage
+                                if 'confidence:' in parentheses_content:
+                                    conf_part = parentheses_content.split('confidence:')[1].strip()
+                                    if ',' in conf_part:
+                                        confidence_val = conf_part.split(',')[0].strip()
+                                    else:
+                                        confidence_val = conf_part.strip()
+                                
+                                # Extract timestamp
+                                if 'timestamp:' in parentheses_content:
+                                    timestamp_val = parentheses_content.split('timestamp:')[1].strip()
+                                
+                            visual_items.append({
+                                'text': visual_text,
+                                'confidence': confidence_val,
+                                'timestamp': timestamp_val
+                            })
                 analysis_data['visual_text'] = visual_items
             
-            # Extract objects detected
+            # Extract objects detected - handle multiple formats
             if 'Video shows:' in content:
+                # Basic format: "Video shows: tie, person, vase"
                 objects_line = content.split('Video shows:')[1].split('\n')[0].strip()
                 objects = [obj.strip() for obj in objects_line.split(',')]
-                analysis_data['objects_detected'] = objects
+                if not analysis_data.get('objects_detected'):  # Don't overwrite detailed detection
+                    analysis_data['objects_detected'] = objects
+            
+            # Extract detailed object detection
+            if '🎯 **Objects Detected:**' in content:
+                detailed_objects = []
+                lines = content.split('\n')
+                in_objects_section = False
+                for line in lines:
+                    if '🎯 **Objects Detected:**' in line:
+                        in_objects_section = True
+                        continue
+                    elif in_objects_section and (line.startswith('🎯') or line.startswith('📊')) and not line.startswith('•'):
+                        # Hit a new section header, stop processing objects
+                        in_objects_section = False
+                        continue
+                    elif in_objects_section and line.strip().startswith('•'):
+                        # Extract detailed object info: "• person: 11 instances (avg confidence: 100%)"
+                        obj_line = line.strip('• ').strip()
+                        if ':' in obj_line:
+                            obj_name = obj_line.split(':', 1)[0].strip()  # Only split on first colon
+                            obj_details = obj_line.split(':', 1)[1].strip()
+                            
+                            # Extract instances and confidence
+                            instances = ""
+                            confidence = ""
+                            
+                            # Parse instances
+                            if 'instance' in obj_details:
+                                instances_part = obj_details.split('instance')[0].strip()
+                                instances = instances_part
+                            
+                            # Parse confidence using regex
+                            import re
+                            conf_match = re.search(r'\((.*?)\)', obj_details)
+                            if conf_match:
+                                full_confidence = conf_match.group(1)
+                                confidence = full_confidence.replace('avg confidence:', '').strip()
+                            
+                            detailed_objects.append({
+                                'name': obj_name,
+                                'instances': instances,
+                                'confidence': confidence
+                            })
+                
+                if detailed_objects:
+                    analysis_data['objects_detected'] = detailed_objects
+                    analysis_data['objects_detailed'] = True
             
             # Extract key topics
             if '💡 **Key Messages:**' in content or '🎯 **Main Themes:**' in content:
@@ -201,7 +274,20 @@ class ReportGenerationServer:
             if analysis_data['visual_text']:
                 summary_parts.append(f"detected {len(analysis_data['visual_text'])} on-screen text elements")
             if analysis_data['objects_detected']:
-                summary_parts.append(f"identified objects: {', '.join(analysis_data['objects_detected'])}")
+                # Handle both string list and dict list formats
+                objects_list = analysis_data['objects_detected']
+                if all(isinstance(item, str) for item in objects_list):
+                    objects_str = ', '.join(objects_list)
+                else:
+                    # Extract object names from dict format
+                    object_names = []
+                    for item in objects_list:
+                        if isinstance(item, dict):
+                            object_names.append(item.get('name', item.get('label', item.get('object', 'Unknown'))))
+                        else:
+                            object_names.append(str(item))
+                    objects_str = ', '.join(object_names)
+                summary_parts.append(f"identified objects: {objects_str}")
             
             analysis_data['executive_summary'] = f"Comprehensive video analysis completed. {' and '.join(summary_parts)}."
         
@@ -245,7 +331,8 @@ class ReportGenerationServer:
             
             if format_type.lower() == "pdf" and PDF_AVAILABLE:
                 return self._generate_pdf_report(analysis_data, clean_filename, timestamp)
-            elif format_type.lower() == "ppt" and PPT_AVAILABLE:
+            elif format_type.lower() in ["ppt", "pptx"] and PPT_AVAILABLE:
+                return self._generate_ppt_report(analysis_data, clean_filename, timestamp)
                 return self._generate_ppt_report(analysis_data, clean_filename, timestamp)
             else:
                 return self._generate_text_report(analysis_data, clean_filename, timestamp)
@@ -380,8 +467,8 @@ class ReportGenerationServer:
                 for item in visual_data[:15]:  # Limit to 15 items
                     if isinstance(item, dict):
                         text_val = item.get('text', 'N/A')
-                        confidence = f"{item.get('confidence', 0):.1%}" if 'confidence' in item else 'N/A'
-                        timestamp = f"{item.get('timestamp', 'N/A')}"
+                        confidence = item.get('confidence', 'N/A')
+                        timestamp = item.get('timestamp', 'N/A')
                         visual_table_data.append([text_val, confidence, timestamp])
                 
                 visual_table = Table(visual_table_data, colWidths=[3*inch, 1.5*inch, 1.5*inch])
@@ -400,33 +487,43 @@ class ReportGenerationServer:
             story.append(Spacer(1, 20))
         
         # Object Detection Section
-        if 'objects' in data and data['objects']:
+        if 'objects_detected' in data and data['objects_detected']:
             story.append(Paragraph("🎯 Object Detection Results", section_style))
-            objects_data = data['objects']
+            objects_data = data['objects_detected']
             
             if isinstance(objects_data, list) and objects_data:
-                # Create table for objects
-                objects_table_data = [['Object Type', 'Instances', 'Avg Confidence']]
-                for obj in objects_data[:12]:  # Limit to 12 objects
-                    if isinstance(obj, dict):
-                        label = obj.get('label', 'Unknown')
-                        count = str(obj.get('count', 1))
-                        confidence = f"{obj.get('confidence', 0):.1%}" if 'confidence' in obj else 'N/A'
-                        objects_table_data.append([label, count, confidence])
-                
-                objects_table = Table(objects_table_data, colWidths=[2.5*inch, 1.5*inch, 1.5*inch])
-                objects_table.setStyle(TableStyle([
-                    ('BACKGROUND', (0, 0), (-1, 0), colors.darkblue),
-                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                    ('FONTSIZE', (0, 0), (-1, -1), 10),
-                    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                    ('BACKGROUND', (0, 1), (-1, -1), colors.lightcyan),
-                    ('GRID', (0, 0), (-1, -1), 1, colors.black)
-                ]))
-                
-                story.append(objects_table)
+                # Handle both simple list and detailed dict format
+                if all(isinstance(item, str) for item in objects_data):
+                    # Simple string list format
+                    story.append(Paragraph(f"<b>Objects Identified:</b> {', '.join(objects_data)}", subsection_style))
+                else:
+                    # Detailed format with confidence and instances
+                    objects_table_data = [['Object Type', 'Instances', 'Avg Confidence']]
+                    for obj in objects_data[:12]:  # Limit to 12 objects
+                        if isinstance(obj, dict):
+                            label = obj.get('name', obj.get('label', obj.get('object', 'Unknown')))
+                            instances = str(obj.get('instances', obj.get('count', 1)))
+                            confidence = obj.get('confidence', 0)
+                            if isinstance(confidence, (int, float)) and confidence <= 1:
+                                confidence_str = f"{confidence:.1%}"
+                            else:
+                                confidence_str = str(confidence)
+                            objects_table_data.append([label, instances, confidence_str])
+                    
+                    if len(objects_table_data) > 1:  # Has data beyond header
+                        objects_table = Table(objects_table_data, colWidths=[2.5*inch, 1.5*inch, 1.5*inch])
+                        objects_table.setStyle(TableStyle([
+                            ('BACKGROUND', (0, 0), (-1, 0), colors.darkblue),
+                            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                            ('FONTSIZE', (0, 0), (-1, -1), 10),
+                            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                            ('BACKGROUND', (0, 1), (-1, -1), colors.lightcyan),
+                            ('GRID', (0, 0), (-1, -1), 1, colors.black)
+                        ]))
+                        
+                        story.append(objects_table)
             story.append(Spacer(1, 20))
         
         # Topic Analysis Section
@@ -560,29 +657,40 @@ class ReportGenerationServer:
                 for item in visual_data[:6]:  # Limit to 6 items
                     if isinstance(item, dict):
                         text_val = item.get('text', 'N/A')
-                        confidence = item.get('confidence', 0)
+                        confidence = item.get('confidence', 'N/A')
                         p = tf.add_paragraph()
-                        p.text = f"• \"{text_val}\" ({confidence:.1%})"
+                        p.text = f"• \"{text_val}\" ({confidence})"
         
         # Object Detection slide
-        if 'objects' in data and data['objects']:
+        if 'objects_detected' in data and data['objects_detected']:
             slide = prs.slides.add_slide(bullet_slide_layout)
             title_shape = slide.shapes.title
             body_shape = slide.shapes.placeholders[1]
             title_shape.text = "🎯 Object Detection"
             
             tf = body_shape.text_frame
-            objects_data = data['objects']
+            objects_data = data['objects_detected']
             tf.text = f"Detected {len(objects_data)} object types"
             
             if isinstance(objects_data, list):
-                for obj in objects_data[:8]:  # Limit to 8 objects
-                    if isinstance(obj, dict):
-                        label = obj.get('label', 'Unknown')
-                        count = obj.get('count', 1)
-                        confidence = obj.get('confidence', 0)
+                # Handle both simple list and detailed dict format
+                if all(isinstance(item, str) for item in objects_data):
+                    # Simple string list format
+                    for obj_name in objects_data[:8]:
                         p = tf.add_paragraph()
-                        p.text = f"• {label}: {count} instances ({confidence:.1%})"
+                        p.text = f"• {obj_name}"
+                else:
+                    # Detailed format
+                    for obj in objects_data[:8]:  # Limit to 8 objects
+                        if isinstance(obj, dict):
+                            label = obj.get('name', obj.get('label', obj.get('object', 'Unknown')))
+                            instances = obj.get('instances', obj.get('count', 1))
+                            confidence = obj.get('confidence', 0)
+                            p = tf.add_paragraph()
+                            if isinstance(confidence, (int, float)) and confidence <= 1:
+                                p.text = f"• {label}: {instances} instances ({confidence:.1%})"
+                            else:
+                                p.text = f"• {label}: {instances} instances ({confidence})"
         
         # Topic Analysis slide
         if 'topics' in data and data['topics']:
@@ -678,22 +786,22 @@ class ReportGenerationServer:
                 for item in visual_data:
                     if isinstance(item, dict):
                         text_val = item.get('text', 'N/A')
-                        confidence = item.get('confidence', 0)
+                        confidence = item.get('confidence', 'N/A')
                         timestamp = item.get('timestamp', 'N/A')
-                        f.write(f"• \"{text_val}\" (Confidence: {confidence:.1%}, Time: {timestamp})\n")
+                        f.write(f"• \"{text_val}\" (Confidence: {confidence}, Time: {timestamp})\n")
                 f.write("\n")
             
             # Objects
-            if 'objects' in data and data['objects']:
+            if 'objects_detected' in data and data['objects_detected']:
                 f.write("OBJECT DETECTION:\n")
                 f.write("-" * 20 + "\n")
-                objects_data = data['objects']
+                objects_data = data['objects_detected']
                 for obj in objects_data:
                     if isinstance(obj, dict):
-                        label = obj.get('label', 'Unknown')
-                        count = obj.get('count', 1)
-                        confidence = obj.get('confidence', 0)
-                        f.write(f"• {label}: {count} instances (Confidence: {confidence:.1%})\n")
+                        label = obj.get('name', obj.get('label', 'Unknown'))
+                        instances = obj.get('instances', obj.get('count', 1))
+                        confidence = obj.get('confidence', 'N/A')
+                        f.write(f"• {label}: {instances} instances (Confidence: {confidence})\n")
                 f.write("\n")
             
             # Topics

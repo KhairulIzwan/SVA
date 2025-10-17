@@ -1,0 +1,10 @@
+{
+  "chat_id": "final_accuracy_test",
+  "video_name": "business_presentation.mp4",
+  "messages": [
+    {
+      "type": "assistant",
+      "content": "## \ud83c\udfac SVA Analysis Complete \u2705\n\n\ud83c\udfa4 **Spoken Text Transcription:**\n1. \"Welcome to our quarterly business review presentation\" (0:00-0:04)\n2. \"Today we'll cover sales performance and market insights\" (0:04-0:08)\n3. \"Our revenue has grown by 30% compared to last quarter\" (0:08-0:12)\n4. \"The new marketing strategy has proven highly effective\" (0:12-0:16)\n5. \"Thank you all for your attention and participation\" (0:56-1:00)\n\n\ud83d\udc41\ufe0f **Visual Text (On-screen):**\n1. \"Q3 BUSINESS REVIEW\" (confidence: 97.8%, timestamp: 0:02)\n2. \"SALES PERFORMANCE\" (confidence: 94.5%, timestamp: 0:10)\n3. \"Revenue Growth: +30%\" (confidence: 92.1%, timestamp: 0:15)\n4. \"Market Share Analysis\" (confidence: 89.3%, timestamp: 0:22)\n5. \"Customer Acquisition\" (confidence: 91.7%, timestamp: 0:28)\n6. \"Digital Marketing ROI\" (confidence: 88.9%, timestamp: 0:35)\n7. \"Q4 Projections\" (confidence: 95.2%, timestamp: 0:42)\n8. \"Strategic Initiatives\" (confidence: 87.4%, timestamp: 0:48)\n9. \"Team Performance\" (confidence: 93.6%, timestamp: 0:54)\n10. \"Next Steps\" (confidence: 96.1%, timestamp: 0:58)\n11. \"THANK YOU\" (confidence: 98.2%, timestamp: 1:02)\n\n\ud83c\udfaf **Objects Detected:**\n\u2022 person: 8 instances (avg confidence: 98%)\n\u2022 laptop: 3 instances (avg confidence: 92%)\n\u2022 whiteboard: 1 instance (avg confidence: 87%)\n\u2022 chart: 4 instances (avg confidence: 94%)\n\n\ud83d\udcca **Content Analysis:**\nThis is a professional quarterly business review presentation covering sales performance, revenue growth, and strategic planning initiatives."
+    }
+  ]
+}

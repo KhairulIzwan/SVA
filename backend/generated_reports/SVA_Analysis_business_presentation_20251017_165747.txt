@@ -1,0 +1,39 @@
+🎬 SVA VIDEO ANALYSIS REPORT
+==================================================
+
+Video File: business_presentation
+Analysis Date: 2025-10-17 16:57:47
+Analysis Engine: SVA HuggingFace Compliant System
+
+EXECUTIVE SUMMARY:
+--------------------
+This comprehensive analysis identified 11 text sources and 0 object types. Visual text recognition found 11 on-screen text elements. All analysis was performed using local AI models ensuring complete privacy and offline operation.
+
+VISUAL TEXT RECOGNITION:
+--------------------
+• "Q3 BUSINESS REVIEW" (Confidence: 97.8%, Time: 0:02)
+• "SALES PERFORMANCE" (Confidence: 94.5%, Time: 0:10)
+• "Revenue Growth: +30%" (Confidence: 92.1%, Time: 0:15)
+• "Market Share Analysis" (Confidence: 89.3%, Time: 0:22)
+• "Customer Acquisition" (Confidence: 91.7%, Time: 0:28)
+• "Digital Marketing ROI" (Confidence: 88.9%, Time: 0:35)
+• "Q4 Projections" (Confidence: 95.2%, Time: 0:42)
+• "Strategic Initiatives" (Confidence: 87.4%, Time: 0:48)
+• "Team Performance" (Confidence: 93.6%, Time: 0:54)
+• "Next Steps" (Confidence: 96.1%, Time: 0:58)
+• "THANK YOU" (Confidence: 98.2%, Time: 1:02)
+
+OBJECT DETECTION:
+--------------------
+• person: 8 instances (Confidence: 98%)
+• laptop: 3 instances (Confidence: 92%)
+• whiteboard: 1 instances (Confidence: 87%)
+• chart: 4 instances (Confidence: 94%)
+
+TECHNICAL DETAILS:
+--------------------
+• Audio Analysis: HuggingFace Whisper with automatic language detection
+• Visual Recognition: DETR object detection + TrOCR text recognition
+• Content Analysis: Advanced NLP with thematic extraction
+• Processing: Local AI models (fully offline)
+• Report Generated: 2025-10-17 16:57:47

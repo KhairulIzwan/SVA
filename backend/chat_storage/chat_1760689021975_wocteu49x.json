@@ -1,0 +1,19 @@
+{
+  "chat_id": "chat_1760689021975_wocteu49x",
+  "messages": [
+    {
+      "id": "1ef3af20-c322-4521-99a6-d511a9684d1d",
+      "content": "What objects are detected in the video?",
+      "role": "user",
+      "timestamp": 1760689041136,
+      "file_path": "/home/user/SVA/data/videos/sample_video"
+    },
+    {
+      "id": "0a691d41-cb42-48cf-901a-2c293ddf4cb9",
+      "content": "🎯 **Objects Detected:**\n\n• person: 11 instances (avg confidence: 100%)\n• tie: 11 instances (avg confidence: 100%)\n• vase: 2 instances (avg confidence: 70%)\n• potted plant: 1 instances (avg confidence: 72%)",
+      "role": "assistant",
+      "timestamp": 1760689149662,
+      "file_path": null
+    }
+  ]
+}
