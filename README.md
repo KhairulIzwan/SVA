@@ -151,13 +151,13 @@ data/videos/
 
 ### 💬 **Sample Queries & Responses**
 
-![SVA Chat Interface](data/videos/Screenshot%202025-10-17%20093237.png)
+![SVA Chat Interface](https://github.com/KhairulIzwan/SVA/blob/main/Screenshot%202025-10-17%20093237.png)
 
 *Example of SVA's chat interface showing real video analysis results*
 
 ### 📄 **Generated Report Examples**
 
-![SVA Generated Reports](data/videos/Screenshot%202025-10-17%20093905.png)
+![SVA Generated Reports](https://github.com/KhairulIzwan/SVA/blob/main/Screenshot%202025-10-17%20093905.png)
 
 *Example of SVA's report generation interface and sample output formats*
 
