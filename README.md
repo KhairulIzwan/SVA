@@ -140,7 +140,7 @@ After analysis, use the report buttons:
 We provide sample videos to help you test SVA's capabilities:
 
 #### 🎥 **Sample Test Video**
-![SVA Analysis Demo](sva_demo.gif)
+![SVA Analysis Demo](https://github.com/KhairulIzwan/SVA/blob/main/WhatsApp%20Video%202025-10-16%20at%209.20.24%20AM.gif)
 
 **Included Test Files:**
 ```bash
